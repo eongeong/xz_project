@@ -1,0 +1,110 @@
+.container {
+  background: #fff0f0;
+}
+.container > div {
+  width: 1000px;
+  margin: 0 auto;
+}
+.container > div > h3 {
+  color: #969696;
+}
+.container > div > hr {
+  color: #969696;
+  margin: 3px 0;
+}
+.container > div > form {
+  background: #ffdcdc;
+  height: 40px;
+  color: #969696;
+  text-align: center;
+}
+.container > div > form > div > * {
+  margin: auto;
+}
+.container > div > div {
+  background: white;
+  padding: 0 10px;
+}
+.container > div > div > div {
+  display: flex;
+  align-items: center;
+}
+.container > div > div > div > div {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid #969696;
+}
+.container > div > div > div > div > * {
+  margin: auto;
+}
+.container > div > div > div > div:first-child {
+  flex: 1;
+}
+.container > div > div > div > div:nth-child(2) {
+  flex: 5;
+}
+.container > div > div > div > div:nth-child(2) > p {
+  font-size: 10px;
+  color: #969696;
+}
+.container > div > div > div > div:nth-child(3) {
+  flex: 2;
+  color: #007fff;
+}
+.container > div > div > div > div:nth-child(4) {
+  flex: 2;
+}
+.container > div > div > div > div:nth-child(4) > span > button {
+  color: white;
+  background: #007fff;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.container > div > div > div > div:nth-child(5) {
+  flex: 2;
+  color: #007fff;
+}
+.container > div > div > div div:last-child {
+  flex: 1;
+}
+.container > div > div > div div:last-child > input {
+  color: white;
+  background: #007fff;
+  padding: 10px;
+  cursor: pointer;
+}
+.container > div > form:last-child {
+  position: relative;
+  top: -1px;
+}
+.container > div > form:last-child > div > input {
+  color: white;
+  background: #666666;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+.container > div > form:last-child > span > p:first-child {
+  margin-left: auto;
+}
+.container > div > form:last-child > span > p:first-child > span {
+  color: #007fff;
+  font-size: 20px;
+  padding: 0 3px;
+}
+.container > div > form:last-child > span > p:nth-child(2) {
+  margin-left: 30px;
+}
+.container > div > form:last-child > span > p:last-child {
+  margin-right: 10px;
+}
+.container > div > form:last-child > input {
+  color: white;
+  background: #007fff;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=cart.css.map */

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>学子商城登录页面</title>
+		<link rel="icon" href="../img/favicon.ico" />
+		<link rel="stylesheet" href="../css/sun.css" />
+		<link rel="stylesheet" href="../css/login.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="flexRowCenter">
+				<a href="../index.html">
+					<img src="../img/header/logo.png"/>
+				</a>
+				<h3>欢迎登录</h3>				
+			</div>
+			<div class="flexColumn">
+				<img src="../img/register/bg.png" class="alignSelfCenter"/>
+				<form action="" class="flexColumn justifySpaceBetween">
+					<div class="d-flex">
+						<p>登录学子商城</p>
+						<a href="register.html" class="alignSelfEnd">新用户注册</a>
+					</div>
+					<div> 
+						<input type="text" name="userName" id="userName" placeholder="用户名长度6~12位之间" maxlength="12" required autofocus/>
+						<img src="../img/login/yhm.png"/>
+					</div>
+					<div>
+						<input type="password" name="userPassword" id="userPassword" placeholder="用户密码6~12位之间" maxlength="12" required autofocus/>
+						<img src="../img/login/mm.png"/>
+					</div>
+					<div class="flexRowCenter">
+						<input type="checkbox" name="rememberMe" id="rememberMe"/>
+						<label for="rememberMe">勿忘我</label>
+						<a href="#">忘记密码</a>
+					</div>
+					<input type="button" value="登录"/>
+				</form>
+			</div>
+			
+			<iframe src="foot_1.html" frameborder="0" scrolling="no" width="100%" height="120px"></iframe>
+		</div>
+		<iframe src="foot_2.html" frameborder="0" scrolling="no" width="100%" height="174px"></iframe>
+	</body>
+</html>

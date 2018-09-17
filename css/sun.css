@@ -1,0 +1,89 @@
+*{
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl,pre,body,a,input,hr{
+	margin:0;
+	padding:0;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight:normal;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style:none;
+}
+img{
+	vertical-align:top;
+}
+input{
+	border:none;
+    outline: none;
+    background-color: transparent;
+}
+button{
+	border:none;
+	outline: none;
+	background-color: transparent;
+}
+.d-flex{
+	display:flex;
+}
+.flexRowWrap{
+	display: flex;
+	flex-flow:row wrap;
+}
+.flexRowStart{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+}
+.flexRowCenter{
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+}
+.flexRowEnd{
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+.flexColumn{
+	display:flex;
+	flex-direction:column;
+}
+.flexColumnStart{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+.flexColumnCenter{
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+}
+.flexColumnEnd{
+	display: flex;
+	flex-direction: column;
+	align-items:flex-end;
+}
+.justifyCenter{
+	justify-content: center;
+}
+.justifySpaceBetween{
+	justify-content:space-between;
+}
+.justitySpaceAround{
+	justify-content:space-around;
+}
+.alignSelfStart{
+	align-self: flex-start;
+}
+.alignSelfEnd{
+	align-self: flex-end;
+}
+.alignSelfCenter{
+	align-self:center;
+}
+.f-1{flex:1;}.f-2{flex:2;}.f-3{flex:3;}.f-4{flex:4;}.f-5{flex:5;}.f-6{flex:6;}.f-7{flex:7;}.f-8{flex:8;}.f-9{flex:9;}.f-10{flex:10;}.f-11{flex:11;}.f-12{flex:12;}

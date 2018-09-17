@@ -1,0 +1,15 @@
+body {
+  background: #fff0f0;
+}
+body > .container > .lookForward {
+  width: 1000px;
+  height: 500px;
+  text-align: center;
+  position: relative;
+  top: 200px;
+}
+body > .container > .lookForward > p {
+  color: #969696;
+}
+
+/*# sourceMappingURL=lookforward.css.map */

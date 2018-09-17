@@ -1,0 +1,72 @@
+.container {
+  background: #fff0f0;
+}
+.container > div:first-child {
+  width: 1000px;
+  margin: 0 auto;
+  height: 80px;
+}
+.container > div:first-child img {
+  margin-left: 30px;
+}
+.container > div:first-child h3 {
+  margin-left: 30px;
+  position: relative;
+  top: 6px;
+  color: #999;
+  font-weight: bold;
+  font-size: 25px;
+}
+.container > div:nth-child(2) {
+  height: 561px;
+  width: 100%;
+  background-color: #444;
+}
+.container > div:nth-child(2) form {
+  position: absolute;
+  right: 100px;
+  top: 180px;
+  height: 371px;
+  background: rgba(0, 0, 0, 0.3);
+  width: 300px;
+  padding: 30px 20px;
+}
+.container > div:nth-child(2) form > div:first-child {
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+.container > div:nth-child(2) form > div:first-child > p {
+  color: white;
+}
+.container > div:nth-child(2) form > div:first-child > a {
+  margin-left: auto;
+  color: white;
+  font-size: 10px;
+}
+.container > div:nth-child(2) form > div:nth-child(2), .container > div:nth-child(2) form > div:nth-child(3) {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: white;
+  border-radius: 5px;
+}
+.container > div:nth-child(2) form > div:nth-child(2) > input, .container > div:nth-child(2) form > div:nth-child(3) > input {
+  width: 100%;
+}
+.container > div:nth-child(2) form > div:nth-child(4) > label {
+  color: white;
+  cursor: pointer;
+  margin-left: 5px;
+}
+.container > div:nth-child(2) form > div:nth-child(4) > a {
+  color: white;
+  margin-left: auto;
+}
+.container > div:nth-child(2) form > input {
+  height: 40px;
+  background: #007fff;
+  color: white;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,136 @@
+body {
+  background: #fff0f0;
+}
+body .container > div:nth-child(7) > div {
+  margin-top: 20px;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child {
+  background: white;
+  padding-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div {
+  width: 30%;
+  margin: 20px 0 0 20px;
+  border: 1px solid #969696;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div a > img {
+  width: 100%;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div > div {
+  padding: 0 10px;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div > div > * {
+  margin: 10px 0;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div > div > p:nth-child(1) {
+  color: #007fff;
+  font-size: 20px;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div > div > p:nth-child(2) {
+  color: #969696;
+  font-size: 10px;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div > div > div {
+  display: flex;
+  align-items: center;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div > div > div > button {
+  width: 25px;
+  height: 25px;
+  background: #007fff;
+  color: white;
+  cursor: pointer;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div > div > div > input:nth-child(2) {
+  margin: 0 3px;
+  width: 22px;
+  text-align: center;
+}
+body .container > div:nth-child(7) > div > div:first-child > div:first-child > div > div > div > input:nth-child(4) {
+  margin-left: auto;
+  background: #007fff;
+  color: white;
+  height: 30px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+body .container > div:nth-child(7) > div > div:last-child {
+  margin-left: 20px;
+}
+body .container > div:nth-child(7) > div > div:last-child > div:first-child > div:first-child {
+  background: #ffdcdc;
+  height: 40px;
+}
+body .container > div:nth-child(7) > div > div:last-child > div:first-child > div:first-child > img {
+  margin: 0 15px;
+}
+body .container > div:nth-child(7) > div > div:last-child > div:first-child > div:first-child > p {
+  color: #969696;
+  font-size: 18px;
+}
+body .container > div:nth-child(7) > div > div:last-child > div:first-child > div:last-child {
+  background: white;
+  padding: 10px 10px 0 10px;
+}
+body .container > div:nth-child(7) > div > div:last-child > div:first-child > div:last-child > p {
+  color: #969696;
+  font-size: 10px;
+  padding-bottom: 10px;
+}
+body .container > div:nth-child(7) > div > div:last-child > form:last-child > div:first-child {
+  height: 40px;
+  color: #969696;
+  background: #ffdcdc;
+}
+body .container > div:nth-child(7) > div > div:last-child > form:last-child > div:first-child > p {
+  margin: 0 10px;
+}
+body .container > div:nth-child(7) > div > div:last-child > form:last-child > div:first-child > button {
+  margin: 0 10px 0 auto;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  background: #969696;
+  border-radius: 3px;
+}
+body .container > div:nth-child(7) > div > div:last-child > form:last-child > div:last-child {
+  background: black;
+  height: 40px;
+}
+body .container > div:nth-child(7) > div > div:last-child > form:last-child > div:last-child > div > img {
+  margin: 0 10px;
+}
+body .container > div:nth-child(7) > div > div:last-child > form:last-child > div:last-child > div > p {
+  color: #007fff;
+  font-size: 20px;
+}
+body .container > div:nth-child(7) > div > div:last-child > form:last-child > div:last-child > input {
+  color: white;
+  background: #007fff;
+  height: 100%;
+  padding: 0 10px;
+  margin-left: auto;
+}
+body .container > div:nth-child(7) .page {
+  display: flex;
+  align-items: center;
+  background: #ffdcdc;
+  height: 50px;
+}
+body .container > div:nth-child(7) .page button {
+  color: #969696;
+  height: 30px;
+  padding: 0 10px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 1px solid #969696;
+  border-radius: 3px;
+  background: white;
+}
+body .container > div:nth-child(7) .page button:first-child {
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=products.css.map */

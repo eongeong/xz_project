@@ -1,0 +1,83 @@
+.container {
+  background: #fff0f0;
+}
+.container > div:first-child {
+  width: 1000px;
+  margin: 0 auto;
+  height: 80px;
+}
+.container > div:first-child img {
+  margin-left: 30px;
+}
+.container > div:first-child h3 {
+  margin-left: 30px;
+  position: relative;
+  top: 6px;
+  color: #999;
+  font-weight: bold;
+  font-size: 25px;
+}
+.container > div:nth-child(2) {
+  height: 561px;
+  width: 100%;
+  background-color: #444;
+}
+.container > div:nth-child(2) form {
+  position: absolute;
+  top: 130px;
+  right: 50px;
+  width: 500px;
+  height: 471px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+}
+.container > div:nth-child(2) form > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.container > div:nth-child(2) form > div:first-child p {
+  flex: 1;
+}
+.container > div:nth-child(2) form > div:first-child a {
+  flex: 1;
+  color: white;
+  font-size: 10px;
+}
+.container > div:nth-child(2) form > div:first-child ~ div label {
+  flex: 3;
+}
+.container > div:nth-child(2) form > div:first-child ~ div input {
+  flex: 7;
+  background: white;
+  height: 35px;
+  border-radius: 3px;
+  padding-left: 10px;
+}
+.container > div:nth-child(2) form > div:first-child ~ div p {
+  font-size: 10px;
+  padding-left: 10px;
+  flex: 5;
+}
+.container > div:nth-child(2) form > div:last-child > input {
+  background: #007fff !important;
+  color: white;
+  cursor: pointer;
+}
+
+.container > div:nth-child(2) form > div:first-child ~ div p:last-child {
+  display: none;
+}
+
+.vali_success {
+  background: url(../img/validate/ok.png) no-repeat;
+  color: greenyellow;
+}
+
+.vali_fail {
+  background: url(../img/validate/err.png) no-repeat;
+  color: red;
+}
+
+/*# sourceMappingURL=register.css.map */

@@ -1,0 +1,110 @@
+.container{
+	width:1000px;
+	margin:0 auto;
+}
+.head,.search,.search div,.search span,.rightHead,.rightHead div,.rightHead a{
+	display:flex;
+	align-items: center;
+}
+.head,.search{
+	position:relative;
+}
+.head{
+	padding:50px 0 40px 0;
+}
+.search{
+	left:40px;
+	width:400px;
+	height:34px;
+	border: 1px solid #0AA1ED;
+}
+.search>input{
+	position:absolute;
+	left:10px;
+	width:390px;
+	border: none;
+	outline: none;
+	background-color:transparent;
+}
+.search div{
+	position:absolute;
+	right:0;
+}
+.search>div>div{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100px;
+	position: relative;	
+}
+.search>div>div>div{
+	z-index: 10;
+	overflow: hidden;
+	cursor: pointer;
+	position: absolute;
+	height:0;
+	top:20px;
+	right: 30px;
+	background-color: #ffdcdc;
+	transition:all linear .5s;
+}
+.search>div>div>span{
+	width:100px;
+}
+.search>div>div>span>p{
+	margin-left:auto ;
+}
+.search>div>div>span>img{
+	transition: all linear .5s; 
+}
+.search>div>div>div>p{
+	color:#fff;
+	margin: 0 5px;
+}
+.search>div>div>div>p:hover{
+	color: rgb(0,127,255);
+}
+.search span{
+	cursor: pointer;
+}
+.search p{
+	font-size: 14px;
+	color: rgba(100,100,100,.3);
+}
+.search span:first-child>img{
+	padding:0 10px;
+}
+.rightHead{
+	position:absolute;
+	right:0;
+}
+.rightHead a{
+	color: rgb(150,150,150);
+	padding:0 10px;
+}
+.rightHead div:nth-child(1)~*{
+	border-left: 1px solid rgb(200,200,200);
+	height: 15px;
+}
+.rightHead p{
+	display: none;
+}
+.rightHead>div:last-child p{
+	width:70px;
+}
+.rightHead>div:hover p{
+	display:block;
+	background-color:white;
+	border:1px solid black;
+	font-size: 10px;
+	padding: 0 6px;
+	box-shadow:3px 3px 1px rgb(150,150,150);
+	position:absolute;
+	bottom:-20px;
+}
+.container>a{
+	font-weight: bold;
+	margin-right:20px;
+	color:rgb(200,200,200);
+}
+

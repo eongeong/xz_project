@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACA,UAAU,EAAE,OAAgB;;AAExB,gCAAa;EACT,KAAK,EAAC,MAAM;EACZ,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,MAAM;EAClB,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,KAAK;;AACV,oCAAE;EACE,KAAK,EAAC,OAAgB",
+"sources": ["../scss/lookforward.scss"],
+"names": [],
+"file": "lookforward.css"
+}

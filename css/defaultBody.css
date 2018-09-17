@@ -1,0 +1,184 @@
+.topSearch {
+  position: fixed;
+  width: 100%;
+  background-color: #fff0f0;
+  border-bottom: 3px solid #ffdcdc;
+  padding: 3px 0;
+  z-index: 1;
+  top: -50px;
+  transition: top linear .5s;
+}
+.topSearch .box {
+  width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+.topSearch .box > .searchBorder {
+  margin-left: 40px;
+  width: 400px;
+  border: 1px solid #0AA1ED;
+}
+.topSearch .box > .searchBorder input {
+  margin-left: 10px;
+  width: 65%;
+}
+.topSearch .box > .searchBorder div {
+  margin-left: auto;
+}
+.topSearch .box > .searchBorder div p {
+  font-size: 13px;
+  color: #bbb;
+  cursor: pointer;
+}
+.topSearch .box > .searchBorder div img {
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all linear .5s;
+}
+.topSearch .box > .searchBorder div > .menu {
+  position: absolute;
+  top: 40px;
+  left: 48%;
+  background: #ffdcdc;
+  height: 0;
+  transition: height .5s linear;
+  overflow: hidden;
+}
+.topSearch .box > .searchBorder div > .menu > p {
+  color: #FFFFFF;
+  margin: 0 5px;
+}
+.topSearch .box > .searchBorder div > .menu > p:hover {
+  color: #007fff;
+}
+.topSearch .box > .right {
+  margin-left: auto;
+}
+.topSearch .box > .right a {
+  padding: 0 10px;
+  height: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #999;
+}
+.topSearch .box > .right a:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+.floorBody {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.floorTitle {
+  margin: 20px 0 10px;
+  border-bottom: 2px solid #c8c8c8;
+}
+
+.floorTitle > p {
+  margin-left: 20px;
+  font-size: 22px;
+  color: #666;
+}
+
+.floor_one p {
+  color: #777;
+  font-size: 10px;
+}
+.floor_one h2 {
+  color: #007fff;
+}
+.floor_one .view {
+  color: #fff;
+  background-color: #007fff;
+  padding: 10px 30px;
+}
+.floor_one img {
+  transition: all 0.5s linear;
+}
+.floor_one img:hover {
+  transform: scale(1.1);
+}
+
+.floor_one > div:first-child {
+  width: 609px;
+  height: 377px;
+  background-color: #ffdcdc;
+  position: relative;
+  margin-bottom: 10px;
+}
+.floor_one > div:first-child img {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+.floor_one > div:first-child .text {
+  width: 300px;
+  position: absolute;
+  left: 70px;
+  top: 40px;
+}
+.floor_one > div:first-child .text h2 {
+  margin: 30px 0;
+}
+
+.floor_one > div:nth-child(2) {
+  width: 381px;
+  height: 377px;
+  background-color: #ffdcdc;
+  position: relative;
+  margin-bottom: 10px;
+}
+.floor_one > div:nth-child(2) img {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+.floor_one > div:nth-child(2) .text {
+  width: 200px;
+  position: absolute;
+  left: 40px;
+  top: 40px;
+}
+.floor_one > div:nth-child(2) .text h2 {
+  margin: 30px 0;
+}
+
+.floor_one > div:nth-child(3) {
+  width: 377px;
+  height: 233px;
+  background-color: #ffdcdc;
+  position: relative;
+}
+.floor_one > div:nth-child(3) a {
+  margin: 0 15px 0 auto;
+}
+.floor_one > div:nth-child(3) .text {
+  width: 150px;
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+.floor_one > div:nth-child(3) .text h1 {
+  font-size: 25px;
+}
+.floor_one > div:nth-child(3) .text h2 {
+  margin: 20px 0;
+}
+
+.floor_one > div:nth-child(3) ~ div {
+  width: 198px;
+  height: 233px;
+  background-color: #ffdcdc;
+  position: relative;
+}
+.floor_one > div:nth-child(3) ~ div img {
+  margin: 15px 0 10px;
+}
+.floor_one > div:nth-child(3) ~ div .text h2 {
+  font-size: 20px;
+  margin: 4px 0;
+}
+
+/*# sourceMappingURL=defaultBody.css.map */

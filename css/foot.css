@@ -1,0 +1,75 @@
+h1,h2,h3,h4,h5,h6,p,ul,ol,dl,pre,body{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+}
+p{
+	line-height: 1.5;
+}
+div.first,div.last>div,div.last .left,div.last .center,div.last .right,div.last .right>div{
+	display:flex;
+}
+div.first>div,div.last .center>div,div.last .right>div>div{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+}
+div.first{
+	width:1000px;
+	margin: 0 auto;
+	height: 100px;
+	padding:20px 0;
+}
+div.first>div{
+	margin:0 auto;
+	font-size: 13px;
+}
+div.last{
+	padding:20px 0 ;
+	margin: 0 auto;
+	width: 1000px;
+}
+div.last .left{
+	flex:1;
+}
+div.last .left>div{
+	margin-right: auto;
+}
+div.last .left img:first-child{
+	padding-bottom:10px;
+}
+div.last .center{
+	flex:1;
+}
+div.last .center>div{
+	margin: 0 auto;
+}
+div.last .center div>a{
+	padding-top: 5px;
+	font-size: 10px;
+	color:rgb(150,150,150);
+}
+div.last .center div>a:hover{
+	color:rgb(100,100,100);
+}
+div.center h3>a{
+	font-size:14px;
+	color: black;
+}
+div.last .right{
+	flex:1;
+}
+div.last .right>div{
+	align-items: center;
+	margin-left:auto;
+}
+div.last .right div>img{
+	margin-left: 10px;
+}
+div.last>p{
+	padding-top:10px;
+	text-align: center;
+	font-size:10px;
+}

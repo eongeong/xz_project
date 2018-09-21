@@ -1,0 +1,22 @@
+$my_red:rgb(255,220,220);
+$my_blue:rgb(0,127,255);
+$my_black:rgb(150,150,150);
+
+@mixin flexRowCenter{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+@mixin flexRowWrap{
+    display: flex;
+    flex-flow:row wrap;
+}
+@mixin flexColumn{
+    display:flex;
+    flex-direction:column;
+}
+@mixin flexColumnCenter{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}

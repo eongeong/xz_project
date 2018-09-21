@@ -1,0 +1,146 @@
+@import "../_scss/color";
+body{
+    background: rgb(255,240,240);
+    .container{
+        >div:nth-child(7){
+            >div{
+                margin-top: 20px;                
+            }
+            >div>div:first-child>div:first-child{
+                background:white;
+                padding-bottom: 20px;
+                display:flex;
+                flex-wrap: wrap;
+                >div{
+                    width: 30%;
+                    margin:20px 0 0 20px;
+                    border: 1px solid $my_black;
+                    a>img{
+                        width:100%;                       
+                    }
+                    >div{
+                        padding:0 10px;
+                        >*{
+                            margin:10px 0 ;
+                        }
+                        >p:nth-child(1){
+                            color: $my_blue;
+                            font-size: 20px;
+                        }
+                        >p:nth-child(2){
+                            color: $my_black;
+                            font-size: 10px;
+                        }
+                        >div{
+                            display: flex;
+                            align-items: center;
+                            >button{
+                                width: 25px;
+                                height: 25px;
+                                background: $my_blue;
+                                color:white;
+                                cursor: pointer;
+                            }
+                            >input:nth-child(2){
+                                margin: 0 3px;
+                                width: 22px;
+                                text-align: center;
+                            }
+                            >input:nth-child(4){
+                                margin-left: auto;
+                                background: $my_blue;
+                                color: white;
+                                height: 30px;
+                                padding: 0 20px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            >div>div:last-child{
+                margin-left: 20px;
+                >div:first-child{
+                    >div:first-child{
+                        background:$my_red;
+                        height: 40px;
+                        >img{
+                            margin: 0 15px;
+                        }
+                        >p{
+                            color:$my_black;
+                            font-size:18px;
+                        }
+                    }
+                    >div:last-child{
+                        background: white;
+                        padding: 10px 10px 0 10px;
+                        >p{
+                            color: $my_black;
+                            font-size: 10px;
+                           padding-bottom: 10px;
+                        }
+                    }
+                }
+                >form:last-child{
+                    >div:first-child{
+                        height: 40px;
+                        color: $my_black;
+                        background: $my_red;
+                        >p{
+                            margin: 0 10px;
+                        }
+                        >button{
+                            margin:0 10px 0 auto;
+                            color: white;
+                            cursor: pointer;
+                            padding: 5px;
+                            background: $my_black;
+                            border-radius: 3px;
+                        }
+                    }
+                    >div:last-child{
+                        background:black;
+                        height: 40px;
+                        >div{
+                            >img{
+                                margin: 0 10px;
+                            }
+                            >p{
+                                color:$my_blue;
+                                font-size: 20px;
+                            }
+                        }
+                        >input{
+                            color: white;
+                            background: $my_blue;
+                            height: 100%;
+                            padding: 0 10px;
+                            margin-left: auto;
+                        }
+                    }
+                }
+            }
+            .page{
+                display: flex;
+                align-items: center;
+                background: $my_red;
+                height: 50px;
+                button{
+                    color: $my_black;
+                    height: 30px;
+                    padding: 0 10px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    border:1px solid $my_black;
+                    border-radius: 3px;
+                    background:white;
+                }
+                button:first-child{
+                    margin-left: auto;
+                }
+            }
+        }
+    }
+}
+

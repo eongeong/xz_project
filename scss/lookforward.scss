@@ -1,0 +1,15 @@
+body{
+    background: rgb(255,240,240);
+    >.container{
+        >.lookForward{
+            width:1000px;
+            height: 500px;
+            text-align: center;
+            position: relative;
+            top: 200px;
+            >p{
+                color:rgb(150,150,150);
+            }
+        }
+    }
+}

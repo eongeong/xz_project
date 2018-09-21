@@ -65,6 +65,9 @@
   color: white;
   cursor: pointer;
 }
+.container > div:nth-child(2) form > div:last-child > p {
+  display: block !important;
+}
 
 .container > div:nth-child(2) form > div:first-child ~ div p:last-child {
   display: none;

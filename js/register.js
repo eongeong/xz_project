@@ -1,17 +1,15 @@
 (function(){
 	let elem={};//定义一个保存元素操作方法的对象
 	document.addEventListener("DOMContentLoaded",function(){elem.domLoad()});//dom加载后执行
-	window.addEventListener("load",function(){elem.pageLoad()});//页面加载后执行
 	
 	(function(){
+		let uname,uname_vali_info=[];
+		let upwd,upwd_vali_info=[];
+		let upwdConfirm,upwdConfirm_vali_info=[];
+		let email,email_vali_info=[];
+		let phone,phone_vali_info=[];
 		
 		elem.domLoad=function(){
-			let uname,uname_vali_info=[];
-			let upwd,upwd_vali_info=[];
-			let upwdConfirm,upwdConfirm_vali_info=[];
-			let email,email_vali_info=[];
-			let phone,phone_vali_info=[];
-			
 			uname=document.querySelectorAll(".container > div:nth-child(2) form > div:first-child ~ div input ")[0];
 			uname_vali_info[0]=document.querySelectorAll(".container > div:nth-child(2) form > div:first-child ~ div p:nth-child(3)")[0];
 			uname_vali_info[1]=document.querySelectorAll(".container > div:nth-child(2) form > div:first-child ~ div p:last-child")[0];
@@ -61,10 +59,6 @@
 			phone.onblur=function(){
 				validate(/(\+86|0086)?\s*1[3-8]\d{9}/,phone,phone_vali_info);
 			}
-		}
-		
-		
-		elem.pageLoad=function(){
 		}
 	})();
 	

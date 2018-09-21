@@ -1,0 +1,269 @@
+@import "../_scss/color";
+.container{
+    background: rgb(255,240,240);
+    >div{
+        width: 1000px;
+        margin: 0 auto;
+        >div:first-child{
+            margin-bottom: 10px;
+            >a{
+                font-size:15px;
+                color:black;
+            }
+        }
+        >div:nth-child(2){
+            >div:first-child{
+                padding-right: 30px;
+                >div:first-child{
+                    background: white;
+                    margin-bottom: 20px;
+                    >img{
+                        margin: auto;
+                    }
+                }
+                >div:nth-child(2){
+                    width:470px;
+                    overflow: hidden;
+                    position:relative;
+                    >div{
+                        width: 1000px;
+                        >img{
+                            width:100px; 
+                            &:hover{
+                                border: 2px solid red !important;
+                            }                           
+                        }
+                        >img:first-child{
+                            border: 1px solid black;
+                        }
+                        >img:not(first-child){
+                            border: 1px solid black;
+                            border-left: 1px solid transparent;
+                        }
+                    }
+                    >span{
+                        position: absolute;
+                        border:20px solid transparent;
+                    }
+                    >span:nth-child(2){
+                        border-right:20px solid rgba(0,0,0,.5);
+                        left: -10px;
+                        cursor: pointer;
+                    }
+                    >span:last-child{
+                        border-left:20px solid rgba(0,0,0,.5);
+                        right:-10px;
+                        cursor: pointer;
+                    }
+                }
+                
+            }
+            >form:last-child{
+                padding-left: 30px;
+                >a:nth-child(2){
+                    color: $my_black;
+                }
+                >div:nth-child(3){
+                    background:$my_red;
+                    border-radius: 10px;
+                    >div{
+                        margin: 10px 0 0 10px;
+                        color:$my_black;
+                    }
+                    >div:first-child{
+                        >span:last-child{
+                            font-size:25px;
+                            color:$my_blue;
+                        }
+                    }
+                }
+                >div:nth-child(4){
+                    display: flex;
+                    align-items: center;
+                    >a{
+                        color: $my_black;                 
+                    }
+                }
+                >div:nth-child(5){
+                    >p:first-child{
+                        color: $my_black;
+                    }
+                    >div:nth-child(2){
+                        overflow: hidden;
+                        >a{
+                            border:1px solid $my_black;
+                            font-size: 10px;
+                            padding: 5px ;
+                            margin: 0 2px 2px 0;
+                            &:hover{
+                                border-color: $my_blue;
+                                color: $my_blue;
+                            }
+                        }
+                    }
+                }
+                >div:nth-child(6){
+                    >p:first-child{
+                        color: $my_black;
+                    }
+                    >button{
+                        padding: 5px 10px;
+                        background: $my_blue;
+                        color: white;
+                        cursor: pointer;
+                    }
+                    >input{
+                        width: 30px;
+                        text-align: center;
+                    }
+                }
+                >div:last-child{
+                    >input{
+                        color: white;
+                        height: 40px;
+                        border-radius: 5px;
+                        cursor: pointer;                   
+                    }
+                    >input:first-child{
+                        background:rgb(255,200,127);
+                    }
+                    >input:nth-child(2){
+                        background: $my_blue;
+                        margin:0 10px;
+                    }
+                    >input:last-child{
+                        background:rgb(255,127,127);
+                    }
+                }
+                
+            }
+        }
+        >div:nth-child(3){
+            margin-top: 30px;
+            >div:first-child{
+                >span:first-child{
+                    font-size: 20px;
+                }
+                >span:last-child{
+                    margin-left: 10px;
+                    font-size: 10px;
+                    background:rgb(0,0,0);
+                    color: white;
+                    border-radius: 10px 0 10px 0;
+                    padding:0 4px;
+                }
+            }
+            >div:nth-child(2){
+                overflow: hidden;
+                >ul{
+                    width:2000px;
+                    padding: 10px 0 20px 0;
+                    >li{
+                        width: 25%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        height: 180px;
+                        >p{
+                            font-size: 10px;
+                            color: $my_black;
+                            text-align: center;
+                            margin-top: auto;
+                            width: 60%;
+                        }
+                    }
+                }
+            }
+            
+        }
+        >div:nth-child(4){
+            >div:first-child{
+                >div:not(:first-child){
+                    width: 750px;
+                }
+                >div{
+                    >p:first-child{
+                        display: flex;
+                        align-items: center;
+                        color: $my_black;
+                        font-weight: bold;
+                        margin: 10px 0;
+                        >img{
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                >div:first-child{
+                    height: 48px;
+                    background: $my_red;
+                    >button{
+                        margin-left: 20px;
+                        font-size: 20px;                        
+                        color: $my_black;
+                        cursor: pointer;
+                    }
+                }
+                >div:nth-child(2){
+                    >div{
+                        >div{
+                            margin-bottom: 10px;
+                            >p{
+                                flex:1;
+                                color: $my_black;
+                                font-size: 10px;
+                            }
+                        }
+                    }
+                }
+                >div:nth-child(4){
+                    >p:not(:first-child){
+                        color: $my_black;
+                        font-size: 10px;
+                        margin-bottom: 30px;
+                    }
+                    >div{
+                        margin: 10px;
+                        >p{
+                            margin-left: 10px;
+                            color: $my_black;
+                            font-size: 20px;
+                        }
+                    }
+                }
+                >div:nth-child(5){
+                    >p:last-child{
+                        font-size: 10px;
+                        color: $my_black;
+                    }
+                }
+                
+            }
+            >div:nth-child(2){
+                border-left: 1px solid $my_red;
+                >*{
+                    height: 48px;
+                    width:100%;
+                    font-size: 20px;
+                    color: $my_black;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+                    justify-content: center;
+                    >p{
+                        margin-left: 10px;
+                    }
+                }
+                >button{
+                    background: $my_blue;
+                    color: white;
+                    margin-bottom: 80px;
+                }
+                >a{
+                    margin-bottom: 10px;
+                    background: white;
+                    border-radius:30px 0 30px 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,149 @@
+@import "../_scss/sun";
+.container{
+    background:rgb(255,240,240);
+    >div{
+        position: relative;
+        width: 1000px;
+        margin:0 auto;
+        >h3{
+            color:$my_black;
+        }
+        >hr{
+            margin: 3px 0;
+            color:$my_black;
+        }
+        >form:nth-child(3){
+            >div:first-child{
+                background:$my_red;
+                height: 40px;
+                >button{
+                    background: $my_blue;
+                    color:white;
+                    margin-left: 10px;
+                    padding:5px;
+                    cursor: pointer;
+                    border-radius: 3px;
+                    &:not(:first-child){
+                        display: none;
+                    }
+                }
+                >input{
+                    position:absolute;
+                    right:10px;
+                    color: white;
+                    background: #666666;
+                    padding:3px 5px;        
+                    cursor: pointer;
+                    border-radius: 3px;
+                }
+            }
+            >div:last-child{
+                background:white;
+                padding-right:1%;
+                padding-bottom:1%;
+                >div{
+                    border: 1px solid rgba(0,0,0,.1);
+                    height: 300px;
+                    width: 24%;
+                    margin:1% 0 0 1%;
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+                    >div:first-child{
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(50,50,50,.3);
+                        z-index: 1;
+                        display: none;
+                        >input{
+                            position: absolute;
+                            top:5px;
+                            left: 5px;
+                        }
+                        
+                    }
+                    >a{
+                         margin:auto;      
+                    }
+                    >div:last-child{
+                        height: 100px;
+                        padding: 10px;
+                        position: relative;
+                        >p{
+                            font-size: 10px;
+                        }
+                        >div{
+                            width: 90%;
+                            position: absolute;
+                            display: flex;
+                            align-items: center;
+                            bottom:10px;
+                            >p{
+                                color:rgb(0,127,255);
+                            }
+                            >input{
+                                margin-left:auto ;
+                                color: white;
+                                background:$my_blue;
+                                padding: 5px 10px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.managementBarfixed{
+    position: fixed;
+    top:0;
+    width:1000px;
+    z-index:10;
+    box-shadow: 0px 2px 0px red;
+}
+.unshow{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+.popUpWindow{
+    display: none;
+    position: fixed;
+    width: 250px;
+    height: 112px;
+    border: 2px solid red;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 10;
+//  top:0;
+//  right:0;
+//  left:0;
+//  bottom:0;
+//  margin:auto;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+    >p{
+        margin-bottom: 10px;
+    }
+    >div{
+        >button{
+            padding: 10px 20px;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        >button:first-child{
+            background: red;
+            margin-right: 10px;
+        }
+        >button:last-child{
+            background: rgb(0,127,255);
+        }
+    }
+}

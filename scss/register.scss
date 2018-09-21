@@ -1,0 +1,73 @@
+.container{
+    background: rgb(255,240,240);
+    >div:first-child{
+        width: 1000px;
+        margin: 0 auto;
+        height: 80px;
+        img{margin-left:30px;}
+        h3{margin-left:30px;position: relative;top: 6px;color: #999;font-weight: bold;font-size: 25px;}
+    }
+    >div:nth-child(2){
+        height: 561px;
+        width: 100%;
+        background-color:#444;
+        form{
+            position:absolute;
+            top: 130px;
+            right: 50px;
+            width: 500px;
+            height: 471px;
+            padding: 30px;
+            background:rgba(0,0,0,.3);
+            color: white;
+            >div{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                
+            }
+            >div:first-child{
+                p{flex: 1;}
+                a{flex:1 ;color:white;font-size: 10px;}
+            }
+            >div:first-child~div{
+                label{
+                    flex:3;
+                }
+                input{
+                    flex:7;
+                    background: white;
+                    height: 35px;
+                    border-radius:3px ;
+                    padding-left: 10px;
+                }
+                p{
+                    font-size: 10px;
+                    padding-left: 10px;
+                    flex:5;
+                }
+            }
+            >div:last-child{
+                >input{
+                    background: rgb(0,127,255) !important;
+                    color: white;
+                    cursor: pointer;
+                }
+                >p{
+                    display: block !important;
+                }
+            }
+        }
+    }
+}
+.container > div:nth-child(2) form > div:first-child ~ div p:last-child {
+    display: none;
+}
+.vali_success{
+    background: url(../img/validate/ok.png) no-repeat;
+    color: greenyellow;
+}
+.vali_fail{
+    background: url(../img/validate/err.png) no-repeat;
+    color:red;
+}

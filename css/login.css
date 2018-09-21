@@ -30,6 +30,7 @@
   background: rgba(0, 0, 0, 0.3);
   width: 300px;
   padding: 30px 20px;
+  border-radius: 5px;
 }
 .container > div:nth-child(2) form > div:first-child {
   border-bottom: 1px solid white;
@@ -49,9 +50,17 @@
   padding: 8px;
   background: white;
   border-radius: 5px;
+  position: relative;
 }
 .container > div:nth-child(2) form > div:nth-child(2) > input, .container > div:nth-child(2) form > div:nth-child(3) > input {
   width: 100%;
+}
+.container > div:nth-child(2) form > div:nth-child(2) > p, .container > div:nth-child(2) form > div:nth-child(3) > p {
+  font-size: 10px;
+  color: red;
+  position: absolute;
+  bottom: -20px;
+  display: none;
 }
 .container > div:nth-child(2) form > div:nth-child(4) > label {
   color: white;
@@ -67,6 +76,7 @@
   background: #007fff;
   color: white;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=login.css.map */

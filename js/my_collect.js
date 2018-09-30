@@ -8,13 +8,13 @@
 		let commoditys;
 		let collectDesk;
 		let popUpWindw;
+		
 		elem.domLoad=function(){
 			managementBar=document.querySelector(".container > div > form:nth-child(3) > div:first-child");
 			managementButtons=document.querySelectorAll(".container > div > form:nth-child(3) > div:first-child > button");
 			commoditys=document.querySelectorAll(".container > div > form:nth-child(3) > div:last-child > div");
 			collectDesk=document.querySelector(".container > div > form:nth-child(3) > div:last-child");
 			popUpWindw=document.getElementsByClassName("popUpWindow")[0];
-			
 			
 			window.onscroll=function(){
 				scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
@@ -98,7 +98,7 @@
 				}
 				
 				if (e.target.innerHTML==="删除"){
-					
+					commoditys=document.querySelectorAll(".container > div > form:nth-child(3) > div:last-child > div");										
 					
 					for(let commodity of commoditys){
 						if(commodity.firstElementChild.firstElementChild.checked){
@@ -110,18 +110,16 @@
 							if(commodity.firstElementChild.firstElementChild.checked){
 								collectDesk.removeChild(commodity);
 								popUpWindw.style="";
+								managementButtons[1].innerHTML="全选";
+								managementButtons[1].style="";					
 							}
 						}
 					}
 					
-					
 					popUpWindw.lastElementChild.lastElementChild.onclick=function(){
 						popUpWindw.style="";
 					}
-										
-					commoditys=document.querySelectorAll(".container > div > form:nth-child(3) > div:last-child > div");										
-					managementButtons[1].innerHTML="全选";
-					managementButtons[1].removeAttribute("style");					
+					
 				}
 								
 			}

@@ -6,7 +6,7 @@ body{
             >div{
                 margin-top: 20px;                
             }
-            >div>div:first-child>div:first-child{
+            >div>form:first-child>div:first-child{
                 background:white;
                 padding-bottom: 20px;
                 display:flex;
@@ -138,9 +138,38 @@ body{
                 }
                 button:first-child{
                     margin-left: auto;
+                    &:active{
+                        background: rgb(0,127,255) !important;
+                        color: white !important;
+                    }
+                }
+                button:last-child{
+                    &:active{
+                        background: rgb(0,127,255) !important;
+                        color: white !important;
+                    }
                 }
             }
         }
     }
 }
 
+.headFixedTop{
+    position:fixed;
+    padding: 3px 0;
+    background: rgb(255,240,240);
+    width: 1000px;
+    box-shadow: 0 2px 0 red;
+}
+[data-a]{
+    position: fixed;
+    width: 196px;
+    top:49px;
+}
+[data-b]{
+    top:49px+188px !important;
+}
+[data-pageShow]{
+    background: rgb(0,127,255) !important;
+    color: white !important;
+}

@@ -12,99 +12,152 @@
   color: #969696;
   margin: 3px 0;
 }
-.container > div > form {
+.container > div > form > div:first-child, .container > div > form > div:last-child {
   background: #ffdcdc;
   height: 40px;
   color: #969696;
   text-align: center;
 }
-.container > div > form > div > * {
+.container > div > form > div:first-child > div > label, .container > div > form > div:last-child > div > label {
+  cursor: pointer;
+}
+.container > div > form > div:first-child > div > *, .container > div > form > div:last-child > div > * {
   margin: auto;
 }
-.container > div > div {
+.container > div > form > div {
   background: white;
   padding: 0 10px;
 }
-.container > div > div > div {
+.container > div > form > div > div {
   display: flex;
   align-items: center;
 }
-.container > div > div > div > div {
+.container > div > form > div > div > div {
   display: flex;
   align-items: center;
   height: 70px;
   border-bottom: 1px solid #969696;
 }
-.container > div > div > div > div > * {
+.container > div > form > div > div > div > * {
   margin: auto;
 }
-.container > div > div > div > div:first-child {
+.container > div > form > div > div > div:first-child {
   flex: 1;
 }
-.container > div > div > div > div:nth-child(2) {
+.container > div > form > div > div > div:nth-child(2) {
   flex: 5;
 }
-.container > div > div > div > div:nth-child(2) > p {
+.container > div > form > div > div > div:nth-child(2) > p {
   font-size: 10px;
   color: #969696;
 }
-.container > div > div > div > div:nth-child(3) {
+.container > div > form > div > div > div:nth-child(3) {
   flex: 2;
   color: #007fff;
 }
-.container > div > div > div > div:nth-child(4) {
+.container > div > form > div > div > div:nth-child(4) {
   flex: 2;
 }
-.container > div > div > div > div:nth-child(4) > span > button {
+.container > div > form > div > div > div:nth-child(4) > span {
+  display: flex;
+  align-items: center;
+}
+.container > div > form > div > div > div:nth-child(4) > span > button {
   color: white;
   background: #007fff;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   cursor: pointer;
+  border-radius: 5px;
 }
-.container > div > div > div > div:nth-child(5) {
+.container > div > form > div > div > div:nth-child(4) > span > input {
+  width: 30px;
+  text-align: center;
+}
+.container > div > form > div > div > div:nth-child(5) {
   flex: 2;
   color: #007fff;
 }
-.container > div > div > div div:last-child {
+.container > div > form > div > div div:last-child {
   flex: 1;
 }
-.container > div > div > div div:last-child > input {
+.container > div > form > div > div div:last-child > input {
   color: white;
   background: #007fff;
   padding: 10px;
   cursor: pointer;
+  border-radius: 5px;
 }
-.container > div > form:last-child {
+.container > div > form > div:last-child {
   position: relative;
   top: -1px;
+  padding-right: 0;
 }
-.container > div > form:last-child > div > input {
+.container > div > form > div:last-child > div:nth-child(2) > button {
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.container > div > form > div:last-child > div > input {
   color: white;
   background: #666666;
   padding: 3px 5px;
   cursor: pointer;
+  border-radius: 5px;
 }
-.container > div > form:last-child > span > p:first-child {
+.container > div > form > div:last-child > span > p:first-child {
   margin-left: auto;
 }
-.container > div > form:last-child > span > p:first-child > span {
+.container > div > form > div:last-child > span > p:first-child > span {
   color: #007fff;
   font-size: 20px;
   padding: 0 3px;
 }
-.container > div > form:last-child > span > p:nth-child(2) {
+.container > div > form > div:last-child > span > p:nth-child(2) {
   margin-left: 30px;
 }
-.container > div > form:last-child > span > p:last-child {
+.container > div > form > div:last-child > span > p:last-child {
   margin-right: 10px;
 }
-.container > div > form:last-child > input {
+.container > div > form > div:last-child > input {
   color: white;
   background: #007fff;
   height: 40px;
   font-size: 20px;
   cursor: pointer;
+}
+
+.popUpWindow {
+  display: none;
+  position: fixed;
+  width: 250px;
+  height: 112px;
+  border: 2px solid red;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+.popUpWindow > p {
+  margin-bottom: 10px;
+}
+.popUpWindow > div > button {
+  padding: 10px 20px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.popUpWindow > div > button:first-child {
+  background: red;
+  margin-right: 10px;
+}
+.popUpWindow > div > button:last-child {
+  background: #007fff;
 }
 
 /*# sourceMappingURL=cart.css.map */

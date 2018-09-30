@@ -1,5 +1,5 @@
 (function(){
-window.onload=function(){
+document.addEventListener("DOMContentLoaded",function(){
 	let searchClass=document.querySelector(".search>div>div");
 	let classMenu=document.querySelector(".search>div>div>div");
 	let menus=document.querySelectorAll(".search>div>div>div>p");
@@ -17,5 +17,5 @@ window.onload=function(){
 			triangle.removeAttribute("style");
 		}
 	}
-}
+});
 })();

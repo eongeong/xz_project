@@ -40,6 +40,9 @@
                             border: 1px solid black;
                             border-left: 1px solid transparent;
                         }
+                        >img[data-focus]{
+                            border: 2px solid $my_blue;
+                        }
                     }
                     >span{
                         position: absolute;
@@ -99,6 +102,10 @@
                                 border-color: $my_blue;
                                 color: $my_blue;
                             }
+                        }
+                        >a[data-focus]{
+                            border:2px solid $my_blue;
+                            color: $my_blue;
                         }
                     }
                 }
@@ -238,7 +245,7 @@
                 }
                 
             }
-            >div:nth-child(2){
+            >form:nth-child(2){
                 border-left: 1px solid $my_red;
                 >*{
                     height: 48px;
@@ -253,10 +260,11 @@
                         margin-left: 10px;
                     }
                 }
-                >button{
-                    background: $my_blue;
+                >input{
+                    background: $my_blue url(../img/foodstore/foodstore_car_2.png) no-repeat 10% 50% ;
                     color: white;
                     margin-bottom: 80px;
+                    padding-left:50px ;
                 }
                 >a{
                     margin-bottom: 10px;
@@ -267,3 +275,4 @@
         }
     }
 }
+

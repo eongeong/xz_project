@@ -3,8 +3,10 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+		<link rel="icon" href="../img/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="../css/sun.css"/>
 		<link rel="stylesheet" href="../css/product_details.css" />
+		<script src="../js/product_details.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="container">
@@ -26,7 +28,7 @@
 						</div>
 						<div class="flexRowCenter">
 							<div class="flexRowCenter">
-								<img src="../img/product/sm/584b5678Nbc9f1e70.jpg"/>
+								<img src="../img/product/sm/584b5678Nbc9f1e70.jpg" data-focus/>
 								<img src="../img/product/sm/584b567dNd9c58341.jpg"/>
 								<img src="../img/product/sm/5819a0ebNefd901bc.jpg"/>
 								<img src="../img/product/sm/5819a10bN2ea5c8e0.jpg"/>
@@ -58,7 +60,7 @@
 						<div class="flexRowStart f-8">
 							<p class="f-1">规格：</p>
 							<div class="flexRowWrap  f-8">
-								<a href="#">【E470C-2017新】i5 4G 500G</a>
+								<a href="#" data-focus>【E470C-2017新】i5 4G 500G</a>
 								<a href="#">【E470C-2017新】i5 8G 500G</a>
 								<a href="#">【E470C-2017新】i5 4G 256GSSD</a>
 								<a href="#">【E470C-2017新】i5 4G 500G</a>
@@ -76,9 +78,9 @@
 						</div>
 						<div class=" flexRowCenter f-1">
 							<p>数量：</p>
-							<button>-</button>
+							<button type="button">-</button>
 							<input type="text" id="" value="1" />
-							<button>+</button>							
+							<button type="button">+</button>							
 						</div>
 						<div class="flexRowCenter f-2">
 							<input class="f-5" type="button" id="" value="立即购买" />
@@ -218,14 +220,14 @@
 						</div>
 						
 					</div>
-					<div class="f-2">
-						<button><img src="../img/foodstore/foodstore_car_2.png"/><p>加入购物车</p></button>
+					<form class="f-2">
+						<input type="button" value="加入购物车">
 						<a href="#"><img src="../img/product_detail/product_detail_icon_g_1.png"/><p>规格参数</p></a>
 						<a href="#"><img src="../img/product_detail/product_detail_icon_t_1.png"/><p>商品介绍</p></a>
 						<a href="#"><img src="../img/product_detail/product_detail_icon_3.png"/><p>售后保障</p></a>
 						<a href="#"><img src="../img/product_detail/product_detail_icon_2.png"/><p>包装清单</p></a>
 						<a href="#"><img src="../img/product_detail/product_detail_icon_up_1.png"/><p>回到顶部</p></a>
-					</div>
+					</form>
 				</div>
 			</div>
 			

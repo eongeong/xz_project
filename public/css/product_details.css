@@ -14,37 +14,56 @@
 }
 .container > div > div:nth-child(2) > div:first-child {
   padding-right: 30px;
+  position: relative;
 }
 .container > div > div:nth-child(2) > div:first-child > div:first-child {
   background: white;
   margin-bottom: 20px;
+  position: relative;
+  width: 450px;
 }
 .container > div > div:nth-child(2) > div:first-child > div:first-child > img {
   margin: auto;
 }
+.container > div > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(2) {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+}
+.container > div > div:nth-child(2) > div:first-child > div:first-child > div:nth-child(3) {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  background: url(../img/product_detail/T12pdtXaldXXXXXXXX-2-2.png);
+  display: none;
+}
+.container > div > div:nth-child(2) > div:first-child > div:first-child:hover > div:nth-child(3) {
+  display: block;
+}
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) {
-  width: 470px;
+  width: 450px;
   overflow: hidden;
   position: relative;
+  border-left: 1px solid black;
+  height: 94px;
 }
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > div {
   width: 1000px;
+  position: absolute;
+  left: 0;
+  transition: left linear .5s;
 }
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > div > img {
-  width: 100px;
+  width: 90px;
+  border: 1px solid black;
+  border-left: 1px solid transparent;
 }
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > div > img:hover {
   border: 2px solid red !important;
 }
-.container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > div > img:first-child {
-  border: 1px solid black;
-}
-.container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > div > img:not(first-child) {
-  border: 1px solid black;
-  border-left: 1px solid transparent;
-}
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > div > img[data-focus] {
-  border: 2px solid #007fff;
+  border: 2px solid #007fff !important;
 }
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > span {
   position: absolute;
@@ -59,6 +78,19 @@
   border-left: 20px solid rgba(0, 0, 0, 0.5);
   right: -10px;
   cursor: pointer;
+}
+.container > div > div:nth-child(2) > div:first-child > div:nth-child(3) {
+  position: absolute;
+  top: 0;
+  left: 460px;
+  display: none;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  background: white;
+}
+.container > div > div:nth-child(2) > div:first-child > div:nth-child(3) > img {
+  position: absolute;
 }
 .container > div > div:nth-child(2) > form:last-child {
   padding-left: 30px;
@@ -182,6 +214,9 @@
 .container > div > div:nth-child(4) > div:first-child > div > p:first-child > img {
   margin-left: 10px;
 }
+.container > div > div:nth-child(4) > div:first-child > div > p:first-child:target {
+  color: #007fff;
+}
 .container > div > div:nth-child(4) > div:first-child > div:first-child {
   height: 48px;
   background: #ffdcdc;
@@ -220,7 +255,7 @@
 .container > div > div:nth-child(4) > form:nth-child(2) {
   border-left: 1px solid #ffdcdc;
 }
-.container > div > div:nth-child(4) > form:nth-child(2) > * {
+.container > div > div:nth-child(4) > form:nth-child(2) > div > * {
   height: 48px;
   width: 100%;
   font-size: 20px;
@@ -230,19 +265,68 @@
   cursor: pointer;
   justify-content: center;
 }
-.container > div > div:nth-child(4) > form:nth-child(2) > * > p {
+.container > div > div:nth-child(4) > form:nth-child(2) > div > * > p {
   margin-left: 10px;
 }
-.container > div > div:nth-child(4) > form:nth-child(2) > input {
+.container > div > div:nth-child(4) > form:nth-child(2) > div > input {
   background: #007fff url(../img/foodstore/foodstore_car_2.png) no-repeat 10% 50%;
   color: white;
   margin-bottom: 80px;
   padding-left: 50px;
 }
-.container > div > div:nth-child(4) > form:nth-child(2) > a {
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a {
   margin-bottom: 10px;
   background: white;
   border-radius: 30px 0 30px 0;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(2) {
+  background: white url(../img/product_detail/product_detail_icon_g_1.png) no-repeat 10% 50%;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(2)[data-right_side="blue"] {
+  background: #007fff url(../img/product_detail/product_detail_icon_g.png) no-repeat 10% 50%;
+  color: white;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(3) {
+  background: white url(../img/product_detail/product_detail_icon_t_1.png) no-repeat 10% 50%;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(3)[data-right_side="blue"] {
+  background: #007fff url(../img/product_detail/product_detail_icon_t.png) no-repeat 10% 50%;
+  color: white;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(4) {
+  background: white url(../img/product_detail/product_detail_icon_3.png) no-repeat 10% 50%;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(4)[data-right_side="blue"] {
+  background: #007fff url(../img/product_detail/product_detail_icon_d.png) no-repeat 10% 50%;
+  color: white;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(5) {
+  background: white url(../img/product_detail/product_detail_icon_2.png) no-repeat 10% 50%;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(5)[data-right_side="blue"] {
+  background: #007fff url(../img/product_detail/product_detail_icon_bao.png) no-repeat 10% 50%;
+  color: white;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(6) {
+  background: white url(../img/index/stationery_icon.png) no-repeat 10% 50%;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(6)[data-right_side="blue"] {
+  background: #007fff url(../img/index/stationery_icon1.png) no-repeat 10% 50%;
+  color: white;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(7) {
+  background: white url(../img/product_detail/product_detail_icon_up_1.png) no-repeat 10% 50%;
+}
+.container > div > div:nth-child(4) > form:nth-child(2) > div > a:nth-child(7)[data-right_side="blue"] {
+  background: #007fff url(../img/product_detail/product_detail_icon_up.png) no-repeat 10% 50%;
+  color: white;
+}
+
+[data-fixed="rightSide"] {
+  width: 200px;
+  position: fixed;
+  z-index: 10;
+  top: 50px;
 }
 
 /*# sourceMappingURL=product_details.css.map */

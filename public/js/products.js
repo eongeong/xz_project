@@ -20,7 +20,6 @@
 			let inputEmpty=function(commodity,e,val){
 				if(e.target===commodity.lastElementChild.lastElementChild.children[1]){
 					commodity.lastElementChild.lastElementChild.children[1].value=val;
-					console.log(1);
 				}
 			}
 			

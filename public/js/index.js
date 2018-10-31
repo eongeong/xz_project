@@ -241,17 +241,19 @@ document.addEventListener("DOMContentLoaded",function(){
 (function(){
 	let topSearch=document.getElementById("topSearch");
 	let scrollTop=document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-		if(scrollTop>400)
-			topSearch.style.top=0;
-		else
-			topSearch.style.top=-50+"px";
-		onscroll=function(){
+	
+	if(scrollTop>400)
+		topSearch.style.top=0;
+	else
+		topSearch.style.top=-50+"px";
+	onscroll=function(){
 		scrollTop=document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
 		if(scrollTop>400)
 			topSearch.style.top=0;
 		else
 			topSearch.style.top=-50+"px";
 	}
+	
 	let classSearch=topSearch.querySelector(".topSearch .box > .searchBorder div");
 	let classMenu=classSearch.querySelector(".topSearch .box > .searchBorder div > .menu");
 	let triangle=classSearch.querySelector(".topSearch .box > .searchBorder div img ");

@@ -89,7 +89,7 @@
 .rightHead p{
 	display: none;
 }
-.rightHead>div:last-child p{
+.rightHead>div:nth-child(5) p{
 	width:70px;
 }
 .rightHead>div:hover p{
@@ -102,9 +102,39 @@
 	position:absolute;
 	bottom:-20px;
 }
+.rightHead>div:nth-child(6){
+	margin-left: 10px;
+	margin-right:30px ;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	background: url("../img/avatar/default.png") no-repeat 50% 50%;
+	cursor: pointer;
+	display: none;
+}
+.quit{
+	position: absolute;
+	width: 80px;
+	height: 0;
+	right: 0;
+	top:90px;
+	background: white;
+	overflow: hidden;
+	display: flex;
+	transition: all linear .3s;
+}
+.quit>p{
+	margin:5px auto;
+	cursor: pointer;
+}
+.quit>p:hover{
+	background: #007fff;
+	color: white;
+}
 .container>a{
 	font-weight: bold;
 	margin-right:20px;
 	color:rgb(200,200,200);
 }
+
 

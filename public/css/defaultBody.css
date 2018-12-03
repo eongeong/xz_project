@@ -1,3 +1,7 @@
+[cloak] {
+  visibility: hidden;
+}
+
 .topSearch {
   position: fixed;
   width: 100%;
@@ -82,101 +86,99 @@
   color: #666;
 }
 
-.floor_one p {
+.floor p {
   color: #777;
   font-size: 10px;
 }
-.floor_one h2 {
+.floor h2 {
   color: #007fff;
 }
-.floor_one .view {
+.floor .view {
   color: #fff;
   background-color: #007fff;
   padding: 10px 30px;
 }
-.floor_one img {
+.floor img {
   transition: all 0.5s linear;
 }
-.floor_one img:hover {
+.floor img:hover {
   transform: scale(1.1);
 }
 
-.floor_one > div:first-child {
+.floor > div:first-child {
   width: 609px;
   height: 377px;
   background-color: #ffdcdc;
   position: relative;
   margin-bottom: 10px;
 }
-.floor_one > div:first-child img {
+.floor > div:first-child img {
   position: absolute;
   right: 20px;
   bottom: 10px;
 }
-.floor_one > div:first-child .text {
+.floor > div:first-child .text {
   width: 300px;
   position: absolute;
   left: 70px;
   top: 40px;
 }
-.floor_one > div:first-child .text h2 {
+.floor > div:first-child .text h2 {
   margin: 30px 0;
 }
 
-.floor_one > div:nth-child(2) {
+.floor > div:nth-child(2) {
   width: 381px;
   height: 377px;
   background-color: #ffdcdc;
   position: relative;
   margin-bottom: 10px;
 }
-.floor_one > div:nth-child(2) img {
+.floor > div:nth-child(2) img {
   position: absolute;
   right: 20px;
   bottom: 10px;
 }
-.floor_one > div:nth-child(2) .text {
+.floor > div:nth-child(2) .text {
   width: 200px;
   position: absolute;
   left: 40px;
   top: 40px;
 }
-.floor_one > div:nth-child(2) .text h2 {
+.floor > div:nth-child(2) .text h2 {
   margin: 30px 0;
 }
 
-.floor_one > div:nth-child(3) {
+.floor > div:nth-child(3) {
   width: 377px;
   height: 233px;
   background-color: #ffdcdc;
   position: relative;
 }
-.floor_one > div:nth-child(3) a {
+.floor > div:nth-child(3) a {
   margin: 0 15px 0 auto;
 }
-.floor_one > div:nth-child(3) .text {
+.floor > div:nth-child(3) .text {
   width: 150px;
   position: absolute;
   top: 30px;
   left: 40px;
 }
-.floor_one > div:nth-child(3) .text h1 {
+.floor > div:nth-child(3) .text h1 {
   font-size: 25px;
 }
-.floor_one > div:nth-child(3) .text h2 {
+.floor > div:nth-child(3) .text h2 {
   margin: 20px 0;
 }
 
-.floor_one > div:nth-child(3) ~ div {
+.floor > div:nth-child(3) ~ div {
   width: 198px;
   height: 233px;
   background-color: #ffdcdc;
   position: relative;
+  padding: 15px 0;
 }
-.floor_one > div:nth-child(3) ~ div img {
-  margin: 15px 0 10px;
-}
-.floor_one > div:nth-child(3) ~ div .text h2 {
+.floor > div:nth-child(3) ~ div .text h2 {
   font-size: 20px;
   margin: 4px 0;
 }

@@ -28,7 +28,7 @@ button{
 	background-color: transparent;
 	border-radius: 5px;
 }
-.d-flex{
+.flex{
 	display:flex;
 }
 .flexRowWrap{

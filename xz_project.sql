@@ -45,7 +45,7 @@ CREATE TABLE xz_laptop_pic(
  );
 
  CREATE TABLE xz_index_product(
-	 pid INT PRIMARY KEY AUTO_INCREMENT,
+	 seq_recommended INT,
 	 laptop_id INT,
 	 title VARCHAR(64),
 	 details VARCHAR(128),
@@ -55,13 +55,14 @@ CREATE TABLE xz_laptop_pic(
 
 CREATE TABLE xz_user(
 	uid INT PRIMARY KEY AUTO_INCREMENT,
-	uname VARCHAR(32),
+	uname VARCHAR(32) UNIQUE,
 	upwd VARCHAR(32),
 	email VARCHAR(64),
 	phone VARCHAR(16),
 	avatar VARCHAR(128) DEFAULT "img/avatar/default.png",
 	user_name VARCHAR(32),
-	gender BOOL
+	gender BOOL,
+	in_login BOOL DEFAULT false
 );
 
 CREATE TABLE xz_receiver_address(
@@ -458,12 +459,12 @@ INSERT INTO xz_index_carousel VALUES (NULL,19,"img/index/banner2.png");
 INSERT INTO xz_index_carousel VALUES (NULL,1,"img/index/banner3.png");
 INSERT INTO xz_index_carousel VALUES (NULL,9,"img/index/banner4.png");
 
-INSERT INTO xz_index_product VALUES(NULL,1,"Apple MacBook Air系列"," 酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存","img/index/study_computer_img1.png");
-INSERT INTO xz_index_product VALUES(NULL,5,"小米Air 金属超轻薄","酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD独立显卡","img/index/study_computer_img2.png");
-INSERT INTO xz_index_product VALUES(NULL,9,"联想E480C 轻薄系列","酷睿双核i7处理器|256GB SSD|4GB内存|英特尔HD显卡680M","img/index/study_computer_img3.png");
-INSERT INTO xz_index_product VALUES(NULL,13,"华硕RX310 金属超极本","酷睿双核i5处理器|512GB SSD|4GB内存|英特尔HD游戏级显卡"," img/index/study_computer_img4.png");
-INSERT INTO xz_index_product VALUES(NULL,17,"联想小新700 电竞版游戏本","酷睿双核i7处理器|1TGB SSD|8GB内存|英特尔HD显卡620含共享显卡内存","img/index/study_computer_img5.png ");
-INSERT INTO xz_index_product VALUES(NULL,19,"戴尔灵越燃7000 轻薄窄边","酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD显卡"," img/index/study_computer_img3.png ");
-INSERT INTO xz_index_product VALUES(NULL,38,"神州战神Z7M 高性价比游戏本","酷睿双核i7处理器|1TGB SSD|8GB内存|英特尔HD游戏机独立显卡","img/index/study_computer_img4.png ");
+INSERT INTO xz_index_product VALUES(1,1,"Apple MacBook Air系列","酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内存","img/index/study_computer_img1.png");
+INSERT INTO xz_index_product VALUES(2,5,"小米Air 金属超轻薄","酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD独立显卡","img/index/study_computer_img2.png");
+INSERT INTO xz_index_product VALUES(3,9,"联想E480C 轻薄系列","酷睿双核i7处理器|256GB SSD|4GB内存|英特尔HD显卡680M","img/index/study_computer_img3.png");
+INSERT INTO xz_index_product VALUES(4,13,"华硕RX310 金属超极本","酷睿双核i5处理器|512GB SSD|4GB内存|英特尔HD游戏级显卡"," img/index/study_computer_img4.png");
+INSERT INTO xz_index_product VALUES(5,17,"联想小新700 电竞版游戏本","酷睿双核i7处理器|1TGB SSD|8GB内存|英特尔HD显卡620含共享显卡内存","img/index/study_computer_img5.png ");
+INSERT INTO xz_index_product VALUES(6,19,"戴尔灵越燃7000 轻薄窄边","酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD显卡"," img/index/study_computer_img3.png ");
+INSERT INTO xz_index_product VALUES(7,38,"神州战神Z7M 高性价比游戏本","酷睿双核i7处理器|1TGB SSD|8GB内存|英特尔HD游戏机独立显卡","img/index/study_computer_img4.png ");
 
-INSERT INTO xz_user VALUES(NULL,"yangyang",123456,"13452038583@163.com","13452038583",DEFAULT,"申阳",1);
+INSERT INTO xz_user VALUES(NULL,"yangyang",123456,"13452038583@163.com","13452038583",DEFAULT,"申阳",1,DEFAULT);

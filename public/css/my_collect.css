@@ -67,16 +67,19 @@
 .container > div > form:nth-child(3) > div:last-child > div > a {
   margin: auto;
 }
+.container > div > form:nth-child(3) > div:last-child > div > a > img {
+  width: 80%;
+}
 .container > div > form:nth-child(3) > div:last-child > div > div:last-child {
   height: 100px;
-  padding: 10px;
+  padding: 4px;
   position: relative;
 }
 .container > div > form:nth-child(3) > div:last-child > div > div:last-child > p {
   font-size: 10px;
 }
 .container > div > form:nth-child(3) > div:last-child > div > div:last-child > div {
-  width: 90%;
+  width: 95%;
   position: absolute;
   display: flex;
   align-items: center;
@@ -85,12 +88,14 @@
 .container > div > form:nth-child(3) > div:last-child > div > div:last-child > div > p {
   color: #007fff;
 }
-.container > div > form:nth-child(3) > div:last-child > div > div:last-child > div > input {
+.container > div > form:nth-child(3) > div:last-child > div > div:last-child > div > a {
   margin-left: auto;
   color: white;
   background: #007fff;
   padding: 5px 10px;
   cursor: pointer;
+  border-radius: 3px;
+  font-size: 3px;
 }
 
 .managementBarfixed {
@@ -112,7 +117,7 @@
 .popUpWindow {
   display: none;
   position: fixed;
-  width: 250px;
+  width: 250px !important;
   height: 112px;
   border: 2px solid red;
   background-color: white;

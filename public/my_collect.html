@@ -7,6 +7,10 @@
 		<link rel="stylesheet" href="css/sun.css" />
 		<link rel="stylesheet" type="text/css" href="css/my_collect.css"/>
 		<script src="js/my_collect.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/my.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/axios.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/qs.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
 		<div class="popUpWindow flexColumnCenter">
@@ -23,7 +27,7 @@
 				<h3>我收藏的商品</h3>
 				<hr />
 				<form>
-					<div class="flexRowCenter">						
+					<div class="flexRowCenter" ref="managementBar">						
 						<button type="button">管理收藏夹</button>
 						<button type="button">全选</button>
 						<button type="button">删除</button>
@@ -31,158 +35,23 @@
 						<input type="button" value="清空失效商品"/>
 						
 					</div>
-					<div class="flexRowWrap">
-						<div>
+					<div class="flexRowWrap" ref="commoditys">
+						<div v-for="pro in collects">
 							<div>
 								<input type="checkbox"/>								
 							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_1.png"/>
+							<a :href="`product_details.html?lid=${pro.laptop_id}`" class="flexColumnCenter">
+								<img :src="pro.md"/>
 							</a>
 							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
+								<p>{{pro.title}}</p>
 								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
+									<p>￥{{pro.price}}</p>
+									<a :href="`product_details.html?lid=${pro.laptop_id}`">查看详情</a>
 								</div>
 							</div>
 						</div>
-						<div>
-							<div>
-								<input type="checkbox"/>								
-							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_2.png"/>
-							</a>
-							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
-								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<input type="checkbox"/>								
-							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_3.png"/>
-							</a>
-							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
-								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<input type="checkbox"/>								
-							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_4.png"/>
-							</a>
-							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
-								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<input type="checkbox"/>								
-							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_1.png"/>
-							</a>
-							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
-								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<input type="checkbox"/>								
-							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_2.png"/>
-							</a>
-							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
-								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<input type="checkbox"/>								
-							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_1.png"/>
-							</a>
-							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
-								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<input type="checkbox"/>								
-							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_2.png"/>
-							</a>
-							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
-								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<input type="checkbox"/>								
-							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_3.png"/>
-							</a>
-							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
-								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
-								</div>
-							</div>
-						</div>
-						<div>
-							<div>
-								<input type="checkbox"/>								
-							</div>
-							<a href="#">
-								<img src="img/product_detail/product_detail_4.png"/>
-							</a>
-							<div>
-								<p>DELL燃7000 14.0英寸微边框(i5-7200u  8GB 256GB SSD HD620 Win10)银</p>
-								<div>
-									<p>￥4000.00</p>
-									<input type="button"value="加入购物车" />
-								</div>
-							</div>
-						</div>
-					
+						
 					</div>
 				</form>
 			</div>
@@ -191,4 +60,4 @@
 		</div>
 		<iframe src="foot_2.html" frameborder="0"scrolling="no" width="100%" height="174px"></iframe>
 	</body>
-</html>
+</html><!--

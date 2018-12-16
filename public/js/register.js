@@ -96,7 +96,7 @@
 							isSubmit();
 						}
 					}
-					xhr.open("get",`http://localhost:3000/user/uname_verify?uname=${uname.value}`,true);
+					xhr.open("get",`http://127.0.0.1:5050/user/uname_verify?uname=${uname.value}`,true);
 					xhr.send(null);					
 					
 				};

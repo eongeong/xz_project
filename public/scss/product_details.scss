@@ -45,7 +45,7 @@
                     overflow: hidden;
                     position:relative;
                     border-left:1px solid black;
-                    height: 94px; 
+                    height: 90px; 
                     >div{
                         width: 1000px;
                         position: absolute;
@@ -56,11 +56,11 @@
                             border: 1px solid black;
                             border-left: 1px solid transparent;
                             &:hover{
-                                border: 2px solid red !important;
+                                border: 1px solid red !important;
                             }                           
                         }
                         >img[data-focus]{
-                            border: 2px solid $my_blue !important;
+                            border: 1px solid $my_blue !important;
                         }
                     }
                     >span{
@@ -94,17 +94,19 @@
             }
             >form:last-child{
                 padding-left: 30px;
-                >a:nth-child(2){
-                    color: $my_black;
+                >p:nth-child(2){
+                    color: $my_black ;
+                    padding-bottom: 5px;
                 }
                 >div:nth-child(3){
+                    padding: 5px 10px;
                     background:$my_red;
                     border-radius: 10px;
                     >div{
-                        margin: 10px 0 0 10px;
                         color:$my_black;
                     }
                     >div:first-child{
+                        margin-bottom: 5px;
                         >span:last-child{
                             font-size:25px;
                             color:$my_blue;
@@ -135,7 +137,7 @@
                             }
                         }
                         >a[data-focus]{
-                            border:2px solid $my_blue;
+                            border:1px solid $my_blue;
                             color: $my_blue;
                         }
                     }
@@ -153,6 +155,7 @@
                     >input{
                         width: 30px;
                         text-align: center;
+                        background:white;
                     }
                 }
                 >div:last-child{

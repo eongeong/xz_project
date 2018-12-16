@@ -1,10 +1,9 @@
-function log(i){
-	console.log(i);
-}
 (function(){
 	let elem={};
 	
 	document.addEventListener("DOMContentLoaded",function(){elem.domLoad()});
+	
+	window.addEventListener("load",function(){elem.winLoad();});
 	
 	(function(){
 		let productModels;
@@ -17,9 +16,45 @@ function log(i){
 		let product_details;
 		let preview;
 		
-		elem.domLoad=function(){
-			productModels=document.querySelectorAll(".container > div > div:nth-child(2) > form:last-child > div:nth-child(5) > div:nth-child(2) > a");
-			buyArea=document.querySelector(".container > div > div:nth-child(2) > form:last-child");
+		elem.domLoad = function(){
+			let vm = new Vue({
+				el:".container",
+				data:{
+					product:{},
+					pics:[],
+					pic:{md:"",lg:""},
+					specs:[],
+					uid:0
+				},
+				methods:{
+					picFun(e){
+						this.pic.md = e.target.dataset.md;
+						this.pic.lg = e.target.dataset.lg;
+					},
+					getLid(){
+						return parseInt(location.search.split("=")[1]);
+					}
+				},
+				mounted(){
+					(async	()=>{
+						this.uid = (await axios.get("http://127.0.0.1:5050/user/uname",{})).data.uid;
+						let result = (await axios.get("http://127.0.0.1:5050/product/details",{ 
+							params:{
+								lid:this.getLid()
+							}
+						})).data;
+						this.product = result.product;
+						this.pics = result.pics;
+						this.specs = result.specs;
+						this.pic.md = this.pics[0].md;
+						this.pic.lg = this.pics[0].lg;
+						this.product.details = JSON.parse(this.product.details);
+					})();
+				}
+			});
+			
+			productModels=document.querySelector(".container > div > div:nth-child(2) > form:last-child > div:nth-child(5) > div:nth-child(2)").children;
+			buyArea=vm.$refs.buyArea;
 			iconBox=document.querySelector(".container > div > div:nth-child(2) > div:first-child > div:nth-child(2)");
 			recommendList.box=document.querySelector(".container > div > div:nth-child(3) > div:nth-child(2) > ul");
 			right_side.list=document.querySelector(".container > div > div:nth-child(4) > form:nth-child(2) > div");
@@ -27,16 +62,6 @@ function log(i){
 			preview=document.querySelector(".container > div > div:nth-child(2) > div:first-child > div:first-child");
 			
 			buyArea.onclick=function(e){
-				for (let productModel of productModels) {
-					if(e.target===productModel){
-						for (let productModel of productModels) {
-							productModel.removeAttribute("data-focus");
-						}
-						productModel.setAttribute("data-focus","");
-						break;
-					}
-				}
-				
 				if(e.target===buyArea.children[5].children[3]){
 					buyArea.children[5].children[2].value=parseInt(buyArea.children[5].children[2].value)+1;
 				}
@@ -49,6 +74,36 @@ function log(i){
 				
 				if(e.target===buyArea.children[5].children[2]){
 					buyArea.children[5].children[2].select();
+				}
+				if(e.target.value == "加入购物车"){
+					(async ()=>{
+						if(vm.uid){
+							let uid = vm.uid;
+							let lid = location.search.split("=")[1];
+							let count = buyArea.children[5].children[2].value;
+							await axios.get("http://127.0.0.1:5050/product/jiarugouwuche",{
+								params:{
+									uid,
+									lid,
+									count
+								}
+							});							
+						}
+					})();
+				}
+				if(e.target.value == "收藏"){
+					(async ()=>{
+						let uid = vm.uid;
+						let lid = location.search.split("=")[1];
+						let count = buyArea.children[5].children[2].value;
+						await axios.get("http://127.0.0.1:5050/product/collect",{
+							params:{
+								uid,
+								lid,
+								count
+							}
+						});
+					})();
 				}
 				
 			}
@@ -98,7 +153,6 @@ function log(i){
 			recommendList.box.onmouseout=function(){
 				recommendList.timer=setInterval(recommendList.move,20);
 			}
-			
 			onscroll=function(){
 				right_side.scorllTop=document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
 				if (right_side.scorllTop>985) {
@@ -146,17 +200,32 @@ function log(i){
 				preview.parentNode.children[2].firstElementChild.style.top=-top*(80/45)+"px";
 			}
 			
-			preview.parentNode.onmouseenter=function(){
+			preview.children[1].onmouseenter=function(){
 				preview.parentNode.children[2].firstElementChild.src=preview.dataset.lg;
-				log(preview.parentNode.children[2].firstElementChild);
 				preview.parentNode.children[2].style.display="block";
 			}
 			
-			preview.parentNode.onmouseleave=function(){
+			preview.children[1].onmouseleave=function(){
 				preview.parentNode.children[2].style.display="none";
 			}
 			
+		}
+	
+		elem.winLoad = function(){
+			iconBox.firstElementChild.children[0].setAttribute("data-focus","");
+			if(iconBox.children[0].children.length<=5){
+				iconBox.children[1].setAttribute("seal","");
+				iconBox.children[2].setAttribute("seal","");
+			}
+			for (let productModel of productModels) {
+				if(productModel.dataset.lid == location.search.split("=")[1]){
+					productModel.setAttribute("data-focus","");
+					break;
+				}
+			}
 			
+			lazyLoad("data-url","cloak");
 		}
 	})();
+
 })();

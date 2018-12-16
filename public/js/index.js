@@ -2,7 +2,7 @@
 	/*动态HTML加载*/
 	/*(async function(){
 		let res = await ajax({
-			url:"http://localhost:3000/index/",
+			url:"http://localhost:5050/index/",
 			type:"get",
 			dataType:"json"
 		});
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded",function(){
 		},
 		mounted(){
 			(async ()=>{
-				this.products = (await axios.get("http://localhost:3000/index/",{})).data;
+				this.products = (await axios.get("http://127.0.0.1:5050/index/",{})).data;
 			})()
 		},
 		components:{ //包含子组件对象,并为子组件起名
@@ -81,14 +81,91 @@ document.addEventListener("DOMContentLoaded",function(){
 		}
 	});
 	
-	new Vue({
+	let vm = new Vue({
 		el:"#container",
 		data:{
 			floorTitle:{
 				"/1F":"最新商品",
 				"/2F":"热销商品",
 				"/3F":"脱销商品"
+			},
+			isLogin:false,
+			quitStyle:{},
+			uname:"",
+			classSearch:"分类搜索",
+			keywork:"",
+			productTitle:[],
+			menuStyle:{},
+			triangleStyle:{}
+		},
+		methods:{
+			signout(){
+				(async ()=>{
+					await axios.get("http://127.0.0.1:5050/user/outLogin",{});
+					this.isLogin = false;
+				 	this.quitStyle = {};
+				 	location.reload();
+				})();
+			},
+			avatarClick(){
+				this.quitStyle = {
+					height : "35px",
+					border : "1px solid black"
+				}
+				setTimeout(function(){
+					vm.quitStyle = {};
+				},1500);
+			},
+			searchClick(e){
+				this.keywork = e.target.innerHTML;
+			},
+			classMenu(e){
+				this.menuStyle = {
+					height:"88px"
+				}
+				this.triangleStyle = {
+					transform:"rotate(180deg)"
+				}
+			},
+			menus(e){
+				this.classSearch = e.target.innerHTML;
+				this.menuStyle = {}
+				this.triangleStyle = {}
+			},
+			search(){
+				open(`products.html?keywork=${this.keywork}`,"_blank");
 			}
+		},
+		watch:{
+			keywork(){
+				let keywork = this.keywork.trim();
+				keywork = keywork.split(/\s+/ig);
+				if(this.keywork){
+					(async ()=>{
+						let result = (await axios.get("http://127.0.0.1:5050/product/search",{
+							params:{
+								keywork
+							}
+						})).data;
+						this.productTitle = [];
+						for(let key in result){
+							for(let k in result[key]){
+								this.productTitle[this.productTitle.length] = result[key][k]
+							}
+						}
+					})();
+				}else{
+					this.productTitle = [];
+				}
+			}
+		},
+		mounted(){
+			(async ()=>{
+				this.isLogin = (await axios.get("http://127.0.0.1:5050/user/isLogin",{})).data;
+			})();
+			(async ()=>{
+				this.uname = (await axios.get("http://127.0.0.1:5050/user/uname",{})).data;
+			})();
 		}
 	});
 })();
@@ -346,7 +423,7 @@ document.addEventListener("DOMContentLoaded",function(){
 			topSearch.style.top=-50+"px";
 	}
 	
-	let classSearch=topSearch.querySelector(".topSearch .box > .searchBorder div");
+	/*let classSearch=topSearch.querySelector(".topSearch .box > .searchBorder div");
 	let classMenu=classSearch.querySelector(".topSearch .box > .searchBorder div > .menu");
 	let triangle=classSearch.querySelector(".topSearch .box > .searchBorder div img ");
 	classSearch.onclick=function(e){
@@ -362,48 +439,11 @@ document.addEventListener("DOMContentLoaded",function(){
 			classMenu.removeAttribute("style");
 			triangle.removeAttribute("style");
 		}
-	}
+	}*/
 })();
 
 });
 
-window.addEventListener("load",function(){
-
-(function(){
-	let elems = document.querySelectorAll("[cloak]");
-	let winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-	let scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-	
-	for (let elem of elems) {
-		let elemHeight = parseInt(document.defaultView.getComputedStyle(elem).height);
-		let elemTop = elem.offsetTop;
-		
-		if((elemTop+elemHeight/2)-scrollTop <= winHeight){
-			elem.removeAttribute("cloak");
-			
-			let img = elem.querySelector("img");
-			img.src = img.dataset.url;
-		}
-	}
-	
-	document.addEventListener("scroll",function(){
-		winHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-		scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-		
-		for (let elem of elems) {
-			let elemHeight = parseInt(document.defaultView.getComputedStyle(elem).height);
-			let elemTop = elem.offsetTop;
-			
-			if((elemTop+elemHeight/2)-scrollTop <= winHeight){
-				elem.removeAttribute("cloak");
-				
-				let img = elem.querySelector("img");
-				img.src = img.dataset.url;
-			}			
-		}
-	});
-})();
-	
-});
+window.addEventListener("load",function(){	lazyLoad("data-url","cloak"); });
 
 })();

@@ -8,6 +8,7 @@
 		let UnameHint;
 		let UpwdHint;
 		let submitBtn;
+		let form;
 		
 		elem.domload=function(){
 			
@@ -16,6 +17,21 @@
 			UnameHint=document.querySelectorAll(".container > div:nth-child(2) form > div:nth-child(2) > p");
 			UpwdHint=document.querySelectorAll(".container > div:nth-child(2) form > div:nth-child(3) > p");
 			submitBtn = document.querySelector(".container > div:nth-child(2) form > input");
+			form = document.forms[0];
+			
+			//页面初始化时，如果帐号密码cookie存在则填充
+			if(getCookie('uname') && getCookie('upwd')){
+			  unameInput.value = getCookie('uname');
+			  upwdInput.value = getCookie('upwd');
+			  form.rememberMe.checked = true;
+			}
+			//复选框勾选状态发生改变时，如果未勾选则清除cookie
+		    form.rememberMe.onchange = function(){
+		      if(!this.checked){
+		        delCookie('uname');
+		        delCookie('upwd');
+		      }
+		    };
 			
 			let validate=function(userInput,hint1,hint2,reg){
 				if(!userInput.value){
@@ -47,20 +63,22 @@
 					if(xhr.readyState == 4 && xhr.status == 200){
 						let result = xhr.responseText;
 						if(parseInt(result)){
-							alert("登录成功");	
-							location.assign("/index.html");
-							
+							alert("登录成功");
+							if(form.rememberMe.checked){ 
+							    setCookie('uname',unameInput.value,7); //设置帐号到cookie，有效期7天
+							    setCookie('upwd',upwdInput.value,7); //设置密码到cookie，有效期7天
+						    }
+							location.assign("index.html");
 						}else{
 							alert("用户名或密码错误,登录失败");
-							location.assign("/login.html");
 						}
 					}
 				}
-				xhr.open("post","http://localhost:3000/user/login",true);
+				xhr.open("post","http://127.0.0.1:5050/user/login",true);
 				xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
 				xhr.send(`uname=${unameInput.value}&upwd=${upwdInput.value}`);	
 				}
-			}			
+			}
 		}
 	})();
 })();

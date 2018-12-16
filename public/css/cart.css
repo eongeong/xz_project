@@ -132,7 +132,7 @@
 .popUpWindow {
   display: none;
   position: fixed;
-  width: 250px;
+  width: 250px !important;
   height: 112px;
   border: 2px solid red;
   background-color: white;

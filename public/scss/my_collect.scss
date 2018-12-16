@@ -64,17 +64,20 @@
                         
                     }
                     >a{
-                         margin:auto;      
+                         margin:auto;
+                         >img{
+                             width: 80%;
+                         }      
                     }
                     >div:last-child{
                         height: 100px;
-                        padding: 10px;
+                        padding: 4px;
                         position: relative;
                         >p{
                             font-size: 10px;
                         }
                         >div{
-                            width: 90%;
+                            width: 95%;
                             position: absolute;
                             display: flex;
                             align-items: center;
@@ -82,12 +85,14 @@
                             >p{
                                 color:rgb(0,127,255);
                             }
-                            >input{
+                            >a{
                                 margin-left:auto ;
                                 color: white;
                                 background:$my_blue;
                                 padding: 5px 10px;
                                 cursor: pointer;
+                                border-radius: 3px;
+                                font-size: 3px;
                             }
                         }
                     }
@@ -112,7 +117,7 @@
 .popUpWindow{
     display: none;
     position: fixed;
-    width: 250px;
+    width: 250px !important;
     height: 112px;
     border: 2px solid red;
     background-color: white;

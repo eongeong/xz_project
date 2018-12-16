@@ -46,7 +46,7 @@
   overflow: hidden;
   position: relative;
   border-left: 1px solid black;
-  height: 94px;
+  height: 90px;
 }
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > div {
   width: 1000px;
@@ -60,10 +60,10 @@
   border-left: 1px solid transparent;
 }
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > div > img:hover {
-  border: 2px solid red !important;
+  border: 1px solid red !important;
 }
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > div > img[data-focus] {
-  border: 2px solid #007fff !important;
+  border: 1px solid #007fff !important;
 }
 .container > div > div:nth-child(2) > div:first-child > div:nth-child(2) > span {
   position: absolute;
@@ -95,16 +95,20 @@
 .container > div > div:nth-child(2) > form:last-child {
   padding-left: 30px;
 }
-.container > div > div:nth-child(2) > form:last-child > a:nth-child(2) {
+.container > div > div:nth-child(2) > form:last-child > p:nth-child(2) {
   color: #969696;
+  padding-bottom: 5px;
 }
 .container > div > div:nth-child(2) > form:last-child > div:nth-child(3) {
+  padding: 5px 10px;
   background: #ffdcdc;
   border-radius: 10px;
 }
 .container > div > div:nth-child(2) > form:last-child > div:nth-child(3) > div {
-  margin: 10px 0 0 10px;
   color: #969696;
+}
+.container > div > div:nth-child(2) > form:last-child > div:nth-child(3) > div:first-child {
+  margin-bottom: 5px;
 }
 .container > div > div:nth-child(2) > form:last-child > div:nth-child(3) > div:first-child > span:last-child {
   font-size: 25px;
@@ -134,7 +138,7 @@
   color: #007fff;
 }
 .container > div > div:nth-child(2) > form:last-child > div:nth-child(5) > div:nth-child(2) > a[data-focus] {
-  border: 2px solid #007fff;
+  border: 1px solid #007fff;
   color: #007fff;
 }
 .container > div > div:nth-child(2) > form:last-child > div:nth-child(6) > p:first-child {
@@ -149,6 +153,7 @@
 .container > div > div:nth-child(2) > form:last-child > div:nth-child(6) > input {
   width: 30px;
   text-align: center;
+  background: white;
 }
 .container > div > div:nth-child(2) > form:last-child > div:last-child > input {
   color: white;

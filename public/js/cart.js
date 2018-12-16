@@ -4,20 +4,40 @@
 	document.addEventListener("DOMContentLoaded",function(){elem.domLoad()});
 	
 	(function(){
-		let checkAlls;
-		let commoditys;
+		let checkAlls = [];
+		let commoditys = [];
 		let commodityDesktop;
 		let delet;
 		let popUpWindow;
 		let actionBar;
 		
 		elem.domLoad=function(){
-			checkAlls=document.querySelectorAll(".container > div > form > div> div >input");
-			commoditys=document.querySelectorAll(".container > div > form > div:nth-child(2) > div");
-			commodityDesktop=document.querySelector(".container > div > form > div:nth-child(2)");
-			delet=document.querySelector(".container > div > form > div:last-child > div:nth-child(2) > button");
-			actionBar=document.querySelector(".container > div > form > div:last-child");
-			popUpWindow=document.querySelector(".popUpWindow");
+			let vm = new Vue({
+				el:".container",
+				data:{
+					uid:0,
+					gouwuche:{}
+				},
+				mounted(){
+					(async ()=>{
+						this.uid = (await axios.get("http://127.0.0.1:5050/user/uname",{})).data.uid;
+						let result = (await axios.get("http://127.0.0.1:5050/gouwuche/getgouwuche",{
+							params:{
+								uid:this.uid
+							}
+						})).data;
+						this.gouwuche = result;
+					})();
+				}
+			});
+			
+			checkAlls[0] = vm.$refs.checkAll_0;
+			checkAlls[1] = vm.$refs.checkAll_1;
+			commoditys=vm.$refs.commodityDesktop.children;
+			commodityDesktop=vm.$refs.commodityDesktop;
+			delet=vm.$refs.delet;
+			actionBar=vm.$refs.actionBar;
+			popUpWindow=vm.$refs.popUpWindow;
 						
 			let checkAll=function(a,b){
 				a.onclick=function(){
@@ -81,19 +101,37 @@
 					}
 					
 					if(e.target===commodity.children[3].firstElementChild.lastElementChild){
-						priceNum(commodity,1);
-						selected();
+						(async ()=>{
+							priceNum(commodity,1);
+							selected();
+							let count = e.target.previousElementSibling.value;
+							let lid = e.target.parentNode.parentNode.parentNode.children[1].firstElementChild.innerHTML;
+							await axios.get("http://127.0.0.1:5050/gouwuche/updateGouwuche",{
+								params:{
+									count,
+									lid,
+									uid:vm.uid
+								}
+							});
+						})();
 					}
 					
 					if(parseInt(commodity.children[3].firstElementChild.children[1].value)>1){
 						if (e.target===commodity.children[3].firstElementChild.firstElementChild) {
-							priceNum(commodity,-1);
-							selected();
+							(async ()=>{
+								priceNum(commodity,-1);
+								selected();
+								let count = e.target.nextElementSibling.value;
+								let lid = e.target.parentNode.parentNode.parentNode.children[1].firstElementChild.innerHTML;
+								await axios.get("http://127.0.0.1:5050/gouwuche/updateGouwuche",{
+									params:{
+										count,
+										lid,
+										uid:vm.uid
+									}
+								});
+							})();
 						}
-					}
-					
-					if (e.target===commodity.children[3].firstElementChild.children[1]) {
-						commodity.children[3].firstElementChild.children[1].value="";
 					}
 				}
 			}
@@ -105,17 +143,41 @@
 				}
 			}
 			
-			commodityDesktop.onchange=function(e){
+			commodityDesktop.oninput=function(e){
 				for (let commodity of commoditys) {
 					if(e.target===commodity.children[3].firstElementChild.children[1]){
 						let reg = new RegExp(/^[0-9]+$/);
-						if(reg.test(commodity.children[3].firstElementChild.children[1].value)&&commodity.children[3].firstElementChild.children[1].value>1){
-							let price=parseInt(commodity.children[2].firstElementChild.innerHTML.replace(/￥/ig,""));
-							commodity.children[4].firstElementChild.innerHTML=price;
-							commodity.children[4].firstElementChild.innerHTML=`￥${(price*parseFloat(commodity.children[3].firstElementChild.children[1].value)).toFixed(2)}`;
-						
+						if(reg.test(commodity.children[3].firstElementChild.children[1].value) && e.target.value){
+							(async ()=>{
+								let count = e.target.value;
+								let lid = e.target.parentNode.parentNode.parentNode.children[1].firstElementChild.innerHTML;
+								await axios.get("http://127.0.0.1:5050/gouwuche/updateGouwuche",{
+									params:{
+										count,
+										lid,
+										uid:vm.uid
+									}
+								});
+							})();
 						}else{
-							commodity.children[3].firstElementChild.children[1].value=1;
+							(async ()=>{
+								let count = 1;
+								let lid = e.target.parentNode.parentNode.parentNode.children[1].firstElementChild.innerHTML;
+								await axios.get("http://127.0.0.1:5050/gouwuche/updateGouwuche",{
+									params:{
+										count,
+										lid,
+										uid:vm.uid
+									}
+								});
+								vm.uid = (await axios.get("http://127.0.0.1:5050/user/uname",{})).data.uid;
+								let result = (await axios.get("http://127.0.0.1:5050/gouwuche/getgouwuche",{
+									params:{
+										uid:vm.uid
+									}
+								})).data;
+								vm.gouwuche = result;
+							})();
 						}
 						selected();
 					}
@@ -134,7 +196,20 @@
 			popUpWindow.children[1].children[0].onclick=function(){
 				for (let commodity of commoditys) {
 					if(commodity.firstElementChild.firstElementChild.checked){
-						commodity.parentNode.removeChild(commodity);	
+						(async ()=>{
+							let lid = commodity.children[1].firstElementChild.innerHTML;
+							let count = commodity.children[3].firstElementChild.children[1].value;
+							if(vm.uid){
+								await axios.get("http://127.0.0.1:5050/product/quchugouwuche",{
+									params:{
+										uid:vm.uid,
+										lid,
+										count
+									}
+								});
+								location.reload();
+							}
+						})();
 					}					
 				}
 				popUpWindow.style="";

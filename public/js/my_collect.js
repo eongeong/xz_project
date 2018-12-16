@@ -10,10 +10,31 @@
 		let popUpWindw;
 		
 		elem.domLoad=function(){
-			managementBar=document.querySelector(".container > div > form:nth-child(3) > div:first-child");
-			managementButtons=document.querySelectorAll(".container > div > form:nth-child(3) > div:first-child > button");
-			commoditys=document.querySelectorAll(".container > div > form:nth-child(3) > div:last-child > div");
-			collectDesk=document.querySelector(".container > div > form:nth-child(3) > div:last-child");
+			let vm = new Vue({
+				el:".container",
+				data:{
+					uid:0,
+					collects:{}
+				},
+				methods:{
+					
+				},
+				mounted(){
+					(async ()=>{
+						this.uid = (await axios.get("http://127.0.0.1:5050/user/uname",{})).data.uid;
+						this.collects = (await axios.get("http://127.0.0.1:5050/product/getcollect",{
+							params:{
+								uid:this.uid
+							}
+						})).data;
+					})();
+				}
+			});
+			
+			managementBar=vm.$refs.managementBar;
+			managementButtons=managementBar.children;
+			commoditys=vm.$refs.commoditys.children;
+			collectDesk=vm.$refs.commoditys;
 			popUpWindw=document.getElementsByClassName("popUpWindow")[0];
 			
 			window.onscroll=function(){
@@ -22,6 +43,19 @@
 					managementBar.classList.add("managementBarfixed");					
 				}else{
 					managementBar.className = managementBar.className.replace(/managementBarfixed/ig,"");
+				}
+			}
+			
+			collectDesk.onclick = function(e){
+				for(let pro of collectDesk.children){
+					if(e.target == pro.firstElementChild){
+						if(pro.firstElementChild.firstElementChild.checked){
+							pro.firstElementChild.firstElementChild.checked = false;
+							
+						}else{
+							pro.firstElementChild.firstElementChild.checked = true;							
+						}
+					}
 				}
 			}
 			
@@ -46,12 +80,10 @@
 							managementButtons[1].style.backgroundColor="red";
 						}
 					}
-					
 				}
-						
 			}
 			
-			managementBar.onclick=function(e){ 
+			managementBar.onclick=function(e){
 				if(e.target.innerHTML==="管理收藏夹"){
 					if (e.target.style!=="") {
 						e.target.style.backgroundColor="red";
@@ -96,7 +128,6 @@
 					e.target.innerHTML="全选";
 					e.target.removeAttribute("style");
 				}
-				
 				if (e.target.innerHTML==="删除"){
 					commoditys=document.querySelectorAll(".container > div > form:nth-child(3) > div:last-child > div");										
 					
@@ -105,10 +136,24 @@
 							popUpWindw.style.display="flex";
 						}
 					}
+					
 					popUpWindw.lastElementChild.firstElementChild.onclick=function(){
 						for(let commodity of commoditys){
 							if(commodity.firstElementChild.firstElementChild.checked){
-								collectDesk.removeChild(commodity);
+								if(vm.uid){
+									(async ()=>{
+										let uid = vm.uid;
+										let lid = commodity.children[1].href.split("=")[1];
+										await axios.get("http://127.0.0.1:5050/product/deletecollect",{
+											params:{
+												uid,
+												lid
+											}
+										});
+										location.reload();
+									})();
+								}
+								
 								popUpWindw.style="";
 								managementButtons[1].innerHTML="全选";
 								managementButtons[1].style="";					
@@ -120,6 +165,27 @@
 						popUpWindw.style="";
 					}
 					
+				}
+				
+				if(e.target.innerHTML == "加入购物车"){
+					for(let pro of collectDesk.children){
+						if(pro.firstElementChild.firstElementChild.checked){
+							(async ()=>{
+								if(vm.uid){
+									let lid = pro.children[1].href.split("=")[1];
+									await axios.get("http://127.0.0.1:5050/product/jiarugouwuche",{
+										params:{
+											uid:vm.uid,
+											lid,
+											count:1
+										}
+									});
+									pro.firstElementChild.firstElementChild.checked = false;
+								}
+							})();
+						}
+					}
+					alert("已加入购物车！");
 				}
 								
 			}

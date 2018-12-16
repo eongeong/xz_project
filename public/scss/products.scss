@@ -12,6 +12,7 @@ body{
                 display:flex;
                 flex-wrap: wrap;
                 >div{
+                    height: 400px;
                     width: 30%;
                     margin:20px 0 0 20px;
                     border: 1px solid $my_black;
@@ -28,6 +29,7 @@ body{
                             font-size: 20px;
                         }
                         >p:nth-child(2){
+                            height: 54px;
                             color: $my_black;
                             font-size: 10px;
                         }
@@ -65,7 +67,7 @@ body{
                         background:$my_red;
                         height: 40px;
                         >img{
-                            margin: 0 15px;
+                            margin: 0 15px;                            
                         }
                         >p{
                             color:$my_black;
@@ -103,12 +105,13 @@ body{
                         background:black;
                         height: 40px;
                         >div{
+                            cursor: pointer;
                             >img{
                                 margin: 0 10px;
                             }
                             >p{
                                 color:$my_blue;
-                                font-size: 20px;
+                                font-size: 15px;
                             }
                         }
                         >input{
@@ -160,6 +163,7 @@ body{
     background: rgb(255,240,240);
     width: 1000px;
     box-shadow: 0 2px 0 red;
+    z-index: 9;
 }
 [data-a]{
     position: fixed;

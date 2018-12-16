@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>学生商城</title>
+		<title>学子购物</title>
 		<link rel="icon" href="img/favicon.ico" />
 		<link rel="stylesheet" href="css/sun.css" />
 		<link rel="stylesheet" href="css/default.css">
@@ -21,27 +21,34 @@
 						<img src="img/header/logo.png"/>
 					</a>
 					<div class="searchBorder flexRowCenter">
-						<input type="text" placeholder="请输入你要搜索的内容"/>
+						<input type="text" placeholder="请输入你要搜索的内容" v-model="keywork" @keyup.13="search()"/>
+						<div class="searchResult">
+							<p v-for="p in productTitle" @click="searchClick($event)">{{p}}</p>
+						</div>
 						<div class="flexRowCenter">
-							<p>分类搜索</p>
-							<img src="img/header/header_normal.png"/>
-							<div class="menu flexColumnCenter">
+							<p @click="classMenu($event)">{{classSearch}}</p>
+							<img src="img/header/header_normal.png" :style="triangleStyle"/>
+							<div class="menu flexColumnCenter" :style="menuStyle" @click="menus($event)">
 								<p>全部</p>
 								<p>电子产品</p>
 								<p>生活食物</p>
 								<p>其他</p>
 							</div>
 						</div>
-						<a href="products.html">
+						<a :href=`products.html?keywork=${keywork}`>
 							<img src="img/header/search.png"/>
 						</a>
 					</div>
 					<div class="right flexRowCenter">
-						<a href="my_collect.html" title="我的收藏"><img src="img/header/care.png"/></a>
-						<a href="lookforward.html" title="用户中心"><img src="img/header/order.png"/></a>
-						<a href="cart.html" title="购物车"><img src="img/header/shop_car.png"/></a>
-						<a href="register.html">注册</a>
-						<a href="login.html">登录</a>
+						<a v-show="isLogin" href="my_collect.html" title="我的收藏"><img src="img/header/care.png"/></a>
+						<a v-show="isLogin" href="lookforward.html" title="用户中心"><img src="img/header/order.png"/></a>
+						<a v-show="isLogin" href="cart.html" title="购物车"><img src="img/header/shop_car.png"/></a>
+						<a v-show="!isLogin" href="register.html">注册</a>
+						<a v-show="!isLogin" href="login.html">登录</a>
+						<a href="#" v-show="isLogin" :title="`用户:${uname}`" @click.prevent="avatarClick()" class="avatar"></a>
+					</div>
+					<div class="quit" @click="signout()" :style="quitStyle">
+						<p>退出登录</p>
 					</div>
 				</div>
 			</div>
@@ -51,10 +58,10 @@
 			<div class="carousel">
 				<div>
 					<div id="scroll">
-						<a href="#"><img src="img/index/banner1.png" /></a>
-						<a href="#"><img src="img/index/banner2.png" /></a>
-						<a href="#"><img src="img/index/banner3.png" /></a>
-						<a href="#"><img src="img/index/banner4.png" /></a>
+						<a href="product_details.html?lid=5"><img src="img/index/banner1.png" /></a>
+						<a href="product_details.html?lid=19"><img src="img/index/banner2.png" /></a>
+						<a href="product_details.html?lid=1"><img src="img/index/banner3.png" /></a>
+						<a href="product_details.html?lid=9"><img src="img/index/banner4.png" /></a>
 					</div>
 					<div class="arrow-left"></div>
 					<div class="arrow-right"></div>
@@ -69,7 +76,7 @@
 			
 			<floor-body v-for="(title,num) in floorTitle" :title="title" :num="num" :key="num.id"></floor-body>
 			
-			<iframe src="foot_1.html" frameborder="0" scrolling="no" width="100%" height="120px"></iframe>
+			<iframe src="" data-url="./foot_1.html" frameborder="0" scrolling="no" width="100%" height="120px" cloak></iframe>
 		</div>
 		
 		<template id="tplFloorBody">
@@ -81,7 +88,7 @@
 		
 		<template id="tplFloorTitle">
 			<div class="floorTitle flexRowCenter" cloak>
-				<img src="" data-url="img/index/computer_icon.png"/>
+				<img data-url="img/index/computer_icon.png"/>
 				<p>{{title}}</p>
 				<p>{{num}}</p>
 			</div>
@@ -105,7 +112,7 @@
 					<a :href="`product_details.html?lid=${product.laptop_id}`" class="view">查看详情</a>
 				</div>
 				<a :href="`product_details.html?lid=${product.laptop_id}`">
-					<img src="" :data-url="`${product.pic}`"/>
+					<img  :data-url="product.pic"/>
 				</a>
 			</div>
 		</template>
@@ -119,7 +126,7 @@
 					<a :href="`product_details.html?lid=${product.laptop_id}`" class="view">查看详情</a>
 				</div>
 				<a :href="`product_details.html?lid=${product.laptop_id}`">
-					<img src="" :data-url="`${product.pic}`"/>
+					<img  :data-url="product.pic"/>
 				</a>
 			</div>
 		</template>
@@ -132,7 +139,7 @@
 					<a :href="`product_details.html?lid=${product.laptop_id}`" class="view">查看详情</a>
 				</div>
 				<a :href="`product_details.html?lid=${product.laptop_id}`">
-					<img src="" :data-url="`${product.pic}`"/>
+					<img  :data-url="product.pic"/>
 				</a>
 			</div>
 		</template>
@@ -140,7 +147,7 @@
 		<template id="tplRecommendedFour">
 			<div class="flexColumnCenter justifySpaceBetween" cloak>
 				<a :href="`product_details.html?lid=${product.laptop_id}`">
-					<img src="" :data-url="`${product.pic}`"/>
+					<img  :data-url="product.pic"/>
 				</a>
 				<div class="text flexColumnCenter">
 					<p>{{product.title}}</p>
@@ -150,6 +157,6 @@
 			</div>
 		</template>
 		
-		<iframe src="foot_2.html" frameborder="0" scrolling="no" width="100%" height="174px"></iframe>
+		<iframe  data-url="./foot_2.html" frameborder="0" scrolling="no" width="100%" height="174px" cloak></iframe>
 	</body>
-</html>
+</html><!--

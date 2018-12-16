@@ -11,6 +11,7 @@
 }
 .head{
 	padding:50px 0 40px 0;
+    transition:all 0.3s linear;
 }
 .search{
 	left:40px;
@@ -21,10 +22,11 @@
 .search>input{
 	position:absolute;
 	left:10px;
-	width:390px;
+	width:260px;
 	border: none;
 	outline: none;
 	background-color:transparent;
+	
 }
 .search div{
 	position:absolute;
@@ -110,7 +112,6 @@
 	border-radius: 50%;
 	background: url("../img/avatar/default.png") no-repeat 50% 50%;
 	cursor: pointer;
-	display: none;
 }
 .quit{
 	position: absolute;
@@ -136,5 +137,17 @@
 	margin-right:20px;
 	color:rgb(200,200,200);
 }
-
-
+.searchResult{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    top:33px;
+    width: 400px;
+    overflow-y: scroll;
+    padding: 0px 10px 0px 10px;
+}
+.searchResult >p{
+    margin-bottom:3px;
+    cursor: pointer;
+}

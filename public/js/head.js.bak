@@ -111,6 +111,8 @@ document.addEventListener("DOMContentLoaded",function(){
 		mounted(){
 			(async ()=>{
 				this.isLogin = (await axios.get("http://127.0.0.1:5050/user/isLogin",{})).data;
+			})();
+			(async ()=>{
 				this.uname = (await axios.get("http://127.0.0.1:5050/user/uname",{})).data;
 			})();
 		}

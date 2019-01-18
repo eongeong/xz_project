@@ -28,6 +28,18 @@
 						})).data;
 						this.gouwuche = result;
 					})();
+				},
+				computed:{
+					totalPrice(){
+						let result = 0;
+						if(this.gouwuche.length){
+							for(let pro of this.gouwuche){
+								let {count,price} = pro;
+								result +=  count * price;
+							}							
+						}
+						return result;
+					}
 				}
 			});
 			

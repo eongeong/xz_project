@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<title>学子购物</title>
 		<link rel="icon" href="img/favicon.ico" />
+		<link rel="stylesheet" href="css/flex.css">
 		<link rel="stylesheet" href="css/default.css">
 		<link rel="stylesheet" href="css/defaultBody.css" />
 		<script src="js/my.js" type="text/javascript" charset="utf-8"></script>
@@ -75,7 +76,7 @@
 			
 			<floor-body v-for="(title,num) in floorTitle" :title="title" :num="num" :key="num.id"></floor-body>
 			
-			<iframe src="" data-url="./foot_1.html" frameborder="0" scrolling="no" width="100%" height="120px" cloak></iframe>
+			<iframe data-url="./foot_1.html" frameborder="0" scrolling="no" width="100%" height="120px" cloak></iframe>
 		</div>
 		
 		<template id="tplFloorBody">

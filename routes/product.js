@@ -47,31 +47,28 @@ router.get("/details",(req,res)=>{
 router.get("/search",(req,res)=>{
 	let output = [];
 	function promise(keywork,sqlName,output){
-		new Promise(function(open){
-			let sql =`select ${sqlName} from xz_laptop where ${sqlName} like ?`;
-			pool.query(sql,[keywork],(err,result)=>{
-				if(err) throw err;
-				if(result.length != 0){
-					if(!output.length){
-						output[output.length] = result[0];
+		let sql =`select ${sqlName} from xz_laptop where ${sqlName} like ?`;
+		pool.query(sql,[keywork],(err,result)=>{
+			if(err) throw err;
+			if(result.length != 0){
+				if(!output.length){
+					output[output.length] = result[0];
+				}
+				let is = false;
+				for(let i = 0;i < result.length; i++){
+					for(let j = 0;j < output.length;j++){
+						if(result[i][sqlName] == output[j][sqlName]){
+							is = true;
+							break;
+						}
 					}
-					let is = false;
-					for(let i = 0;i < result.length; i++){
-						for(let j = 0;j < output.length;j++){
-							if(result[i][sqlName] == output[j][sqlName]){
-								is = true;
-								break;
-							}
-						}
-						if(is == false){
-							output[output.length] = result[i];
-						}else{
-							is = false;
-						}
+					if(is == false){
+						output[output.length] = result[i];
+					}else{
+						is = false;
 					}
 				}
-				open();
-			});
+			}
 		});
 	}
 	
@@ -97,7 +94,7 @@ router.get("/search",(req,res)=>{
 			
 			await promise(keywork,"category",output);
 			
-			await new Promise(function(open){
+			await (function(){
 				let sql ='select disk from xz_laptop where disk like ?';
 				pool.query(sql,[keywork],(err,result)=>{
 					if(err) throw err;
@@ -128,9 +125,8 @@ router.get("/search",(req,res)=>{
 						res.write(JSON.stringify(output));
 						res.end();
 					}
-					open();
 				});
-			});
+			})();
 		}
 	})();
 	

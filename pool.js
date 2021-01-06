@@ -1,7 +1,7 @@
 //连接mysql数据库服务器
 const mysql = require('mysql');
 
-//连接数据库
+// 连接数据库
 // var connection = mysql.createConnection({
 //     host:'127.0.0.1', //mysql所在主机地址
 //     port:3306, //端口号
@@ -19,7 +19,7 @@ const mysql = require('mysql');
 
 // 创建数据库连接池
 var pool = mysql.createPool({
-    host:"127.0.0.1",
+    host:"localhost",
     port:3306,
     user:"root",
     password:"",

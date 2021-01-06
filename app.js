@@ -16,6 +16,15 @@ const bodyParser = require("body-parser");
 
 var app = express();
 
+//跨域请求设置
+app.all('*', function(req, res, next) {
+	res.header('Access-Control-Allow-Origin','http://localhost:5050');
+	res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
+	res.header('Access-Control-Allow-Headers', 'X-Requested-With');
+	res.header('Access-Control-Allow-Headers', 'Content-Type');
+	res.header('Access-Control-Allow-Credentials', true);
+	next();
+});
 app.listen(5050,(req,res)=>{
     console.log('server listening at port 5050...');
 });
